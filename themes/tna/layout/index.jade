@@ -1,0 +1,14 @@
+- games = page.posts.filter(x => x.class == 'Game')
+- runners = page.posts.filter(x => x.class == 'Runner')
+
+h3 Game
+section.game
+  - games.forEach((item, index) => {
+    a(href=url_for(item.path))= item.name
+  - })
+
+h3 Runner
+section.runner
+  - runners.forEach((item, index) => {
+    a(href=url_for(item.path))= item.name
+  - })
