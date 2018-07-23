@@ -1,5 +1,5 @@
-- if (page.class == 'Game')
-  .klass 这是一个游戏
-
-- if (page.class == 'Runner')
-  .klass 这是一个 Runner
+if (page.class == 'Game')
+  != partial('_class/Game', { game: page })
+  
+if (page.class == 'Runner')
+  != partial('_class/Runner', { runner: page })

@@ -1,14 +1,27 @@
+- activities = page.posts.filter(x => x.class == 'Activity')
 - games = page.posts.filter(x => x.class == 'Game')
 - runners = page.posts.filter(x => x.class == 'Runner')
 
-h3 Game
-section.game
-  - games.forEach((item, index) => {
-    a(href=url_for(item.path))= item.name
+h3 
+  i.fa.fa-rocket
+  span 活动 Activity
+section.activity
+  - activities.forEach((item, index) => {
+    .item: a(href=url_for(item.path))= `${item.name} - ${date(item.start_time)}`
   - })
 
-h3 Runner
+h3 
+  i.fa.fa-gamepad
+  span 游戏 Game
+section.game
+  - games.forEach((item, index) => {
+    .item: a(href=url_for(item.path))= `${item.cn_name} (${item.name})`
+  - })
+
+h3 
+  i.fa.fa-user-circle-o
+  span 玩家 Runner
 section.runner
   - runners.forEach((item, index) => {
-    a(href=url_for(item.path))= item.name
+    .item: a(href=url_for(item.path))= item.name
   - })
