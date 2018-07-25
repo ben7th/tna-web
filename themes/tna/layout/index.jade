@@ -1,6 +1,12 @@
-- activities = page.posts.filter(x => x.class == 'Activity')
-- games = page.posts.filter(x => x.class == 'Game')
-- runners = page.posts.filter(x => x.class == 'Runner')
+-
+  activities = page.posts.filter(x => x.class == 'Activity')
+  activities.data = activities.data.sort((a, b) => b.start_time - a.start_time)
+
+  games = page.posts
+    .filter(x => x.class === 'Game')
+    .filter(x => x.display !== 'none')
+
+  runners = page.posts.filter(x => x.class == 'Runner')
 
 h3 
   i.fa.fa-rocket
@@ -13,15 +19,15 @@ section.activity
 h3 
   i.fa.fa-gamepad
   span 游戏 Game
-section.game
+section.games
   - games.forEach((item, index) => {
-    .item: a(href=url_for(item.path))= `${item.cn_name} (${item.name})`
+    != partial('_item/GameItem', { item })
   - })
 
 h3 
   i.fa.fa-user-circle-o
   span 玩家 Runner
-section.runner
+section.runners
   - runners.forEach((item, index) => {
-    .item: a(href=url_for(item.path))= item.name
+    != partial('_item/RunnerItem', { item })
   - })
