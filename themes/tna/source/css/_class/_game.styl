@@ -1,0 +1,31 @@
+$w = 90px
+section.games
+  display flex
+  flex-wrap wrap
+  .item.game
+    width 150px + 12px + 150px
+    height $w
+    background-color rgba(white, 0.1)
+    margin-right 12px
+    margin-bottom 12px
+    transition background-color 0.3s
+    display flex
+    &:hover
+      background-color rgba(white, 0.2)
+
+    $cw = $w
+    .cover
+      width $w
+      height $w
+      display flex
+      align-items center
+      justify-content center
+      img
+        max-width $cw
+        max-height $cw 
+    .info
+      padding 12px
+      font-family $fontTitle      
+      .name
+        font-size 14px
+        opacity 0.6

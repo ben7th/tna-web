@@ -1,82 +1,47 @@
 @import "_variables"
 @import "_base"
+@import "_class/_activity"
+@import "_class/_runner"
+@import "_class/_game"
 
+$hh = 120px
 .header
-  height 100px
+  height $hh
 
 .container
-  h3
-    // color $goldenColor
+  position relative
+  .goback
     text-shadow $commonTextShadow
-    margin-bottom 2rem
+    font-family: $fontTitle
+    position absolute
+    top - $hh
+    height $hh
+    display flex
+    align-items center
     i
-      margin-right 1rem
+      margin-right 18px
       opacity 0.6
+    a
+      transition: text-shadow 0.3s ease
+    a:hover
+      text-shadow $titleTextShadowLight
 
-  section
-    margin-bottom 2rem
+  .main
+    display flex
     
-  .game
-    img.cover
-      width 200px
-      
-$w = 120px
-section.games
-  display flex
-  flex-wrap wrap
-  .item.game
-    width 2.5 * $w
-    height $w
-    background-color rgba(white, 0.1)
-    margin-right 12px
-    margin-bottom 12px
-    transition background-color 0.3s
-    display flex
-    &:hover
-      background-color rgba(white, 0.2)
+    .leftc
+      flex 1
+      padding-right 12px * 4
 
-    $cw = $w
-    .cover
-      width $w
-      height $w
-      display flex
-      align-items center
-      justify-content center
-      img
-        max-width $cw
-        max-height $cw 
-    .info
-      padding 12px        
-      .name
-        font-size 14px
-        opacity 0.6
-        
-section.runners
-  display flex
-  flex-wrap wrap
-  .item.runner
-    width 2.5 * $w
-    height $w
-    background-color rgba(white, 0.1)
-    margin-right 12px
-    margin-bottom 12px
-    transition background-color 0.3s
-    display flex
-    &:hover
-      background-color rgba(white, 0.2)
-      
-    $cw = $w
-    .cover
-      width $w
-      height $w
-      display flex
-      align-items center
-      justify-content center
-      img
-        max-width $cw
-        max-height $cw 
-    .info
-      padding 12px
-      .nickname
-        font-size 14px
-        opacity 0.6
+    .leftc, .rightc
+      h3
+        // color $goldenColor
+        text-shadow $commonTextShadow
+        margin-bottom 2rem
+        font-family: $fontTitle
+        i
+          margin-right 1rem
+          opacity 0.6
+
+      section
+        margin-bottom 2rem

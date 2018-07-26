@@ -1,0 +1,33 @@
+$w = 150px 
+$cw = 60px
+
+section.runners
+  display flex
+  flex-wrap wrap
+  .item.runner
+    width $w
+    height $w
+    background-color rgba(white, 0.1)
+    margin-right 12px
+    margin-bottom 12px
+    transition background-color 0.3s
+    border-radius 6px
+    &:hover
+      background-color rgba(white, 0.2)
+      
+    .cover
+      width $w
+      padding 18px 0 12px
+      display flex
+      align-items center
+      justify-content center
+      img
+        max-width $cw
+        max-height $cw 
+        border-radius $cw
+    .info
+      font-family: $fontTitle
+      text-align center
+      .nickname
+        font-size 14px
+        opacity 0.6

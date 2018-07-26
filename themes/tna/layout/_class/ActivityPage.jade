@@ -1,7 +1,4 @@
 -
-  activities = site.posts.filter(x => x.class == 'Activity')
-  activities.data = activities.data.sort((a, b) => b.start_time - a.start_time)
-
   games = site.posts
     .filter(x => x.class === 'Game')
     .filter(x => x.display !== 'none')
@@ -11,14 +8,17 @@
   runners.data = runners.data.sort((a, b) => a.name > b.name ? 1 : -1)
 
 .main
+  h3.goback
+    a(href=url_for('/'))
+      i.fa.fa-arrow-left
+      span 返回 go back
+
   .leftc
-    h3 
+    h3
       i.fa.fa-rocket
       span 活动 Activities
     section.activities
-      - activities.forEach((item, index) => {
-        != partial('_item/ActivityItem', { item })
-      - })
+      != partial('_item/ActivityItem', { item: activity, showDetail: true })
       
   .rightc
     h3 
@@ -36,4 +36,3 @@
       - runners.forEach((item, index) => {
         != partial('_item/RunnerItem', { item })
       - })
-

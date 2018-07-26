@@ -3,3 +3,6 @@ if (page.class == 'Game')
   
 if (page.class == 'Runner')
   != partial('_class/Runner', { runner: page })
+
+if (page.class === 'Activity')
+  != partial('_class/ActivityPage', { activity: page })
