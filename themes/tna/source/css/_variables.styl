@@ -29,3 +29,11 @@ $xs = '(max-width: 33.9em)'
 $sm = '(max-width: 47.9em)'
 $md = '(max-width: 61.9em)'
 $lg = '(max-width: 74.9em)'
+
+$linkColor = lighten(#4b8bf5, 20%)
+
+link()
+  color $linkColor
+  border-bottom dashed 1px $linkColor
+  &:hover
+    color lighten($linkColor, 20%)

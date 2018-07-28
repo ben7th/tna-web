@@ -10,8 +10,15 @@
     .filter(x => x.class == 'Runner')
   runners.data = runners.data.sort((a, b) => a.name > b.name ? 1 : -1)
 
-.main
-  .leftc
+.site
+  .logo
+    img(src='/img/tna-logo.png')
+  .title
+    h1.t T.N.A.
+    h5.desc Speedrun, Together Not Alone
+
+.row
+  .col-3
     h3 
       i.fa.fa-rocket
       span 活动 Activities
@@ -20,7 +27,7 @@
         != partial('_item/ActivityItem', { item })
       - })
       
-  .rightc
+  .col-9
     h3 
       i.fa.fa-gamepad
       span 游戏 Games

@@ -1,5 +1,15 @@
-a.item.activity(href=url_for(item.path))
-  .code= item.code
-  .name= item.name
-  .date= date(item.start_time)
-  .state(class=item.state)= item.state
+if !showDetail
+  a.item.activity(href=url_for(item.path))
+    .code= item.code
+    .name= item.name
+    .date= date(item.start_time)
+    .state(class=item.state)= item.state
+
+else
+  .item.activity
+    .code= item.code
+    .name= item.name
+    .date= date(item.start_time)
+
+  .activity.detail
+    .state(class=item.state)= item.state

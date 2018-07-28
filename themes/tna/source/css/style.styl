@@ -3,45 +3,71 @@
 @import "_class/_activity"
 @import "_class/_runner"
 @import "_class/_game"
+@import "_content"
 
-$hh = 120px
+h1, h2, h3, h4, h5, h6
+  font-weight 300
+  font-family $fontTitle
+  &.light
+    text-shadow $titleTextShadow
+  i
+    margin-right 1rem
+    opacity 0.6
+    
+a.link
+  link()
+  
+.titlefont
+  font-family $fontTitle
+
+$hh = 144px
 .header
   height $hh
+  background-color rgba($mainColor1, 0.05)
+  // border-bottom solid 1px rgba(white 0.2)
+  box-shadow 0 0 20px rgba(black, 0.5)
 
 .container
+  padding-top 2rem
   position relative
-  .goback
-    text-shadow $commonTextShadow
-    font-family: $fontTitle
-    position absolute
-    top - $hh
-    height $hh
-    display flex
-    align-items center
-    i
-      margin-right 18px
-      opacity 0.6
-    a
-      transition: text-shadow 0.3s ease
-    a:hover
-      text-shadow $titleTextShadowLight
+  
+  section
+    margin-bottom 2rem
+  
+  // .site
+  //   position absolute
+  //   top - $hh
+  //   height $hh
+  //   display flex
+  //   align-items center
 
-  .main
-    display flex
-    
-    .leftc
-      flex 1
-      padding-right 12px * 4
+  //   .logo
+  //     margin-right 2rem
+  //     img
+  //       height 72px
+  //       width auto
+  //   .title
+  //     text-shadow $commonTextShadow
+  //     font-family: $fontTitle
+  //     display flex
+  //     justify-content center
+  //     flex-direction column
+  //     .desc
+  //       opacity 0.6
+  //       margin-bottom 0
 
-    .leftc, .rightc
-      h3
-        // color $goldenColor
-        text-shadow $commonTextShadow
-        margin-bottom 2rem
-        font-family: $fontTitle
-        i
-          margin-right 1rem
-          opacity 0.6
-
-      section
-        margin-bottom 2rem
+  // .goback
+  //   text-shadow $commonTextShadow
+  //   font-family: $fontTitle
+  //   position absolute
+  //   top - $hh
+  //   height $hh
+  //   display flex
+  //   align-items center
+  //   i
+  //     margin-right 18px
+  //     opacity 0.6
+  //   a
+  //     transition: text-shadow 0.3s ease
+  //   a:hover
+  //     text-shadow $titleTextShadowLight

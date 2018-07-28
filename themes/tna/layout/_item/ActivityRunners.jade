@@ -1,0 +1,30 @@
+-
+  shows = site.posts
+    .filter(x => x.class === 'Show')
+    .filter(x => x._activity === activity.id)
+    .filter(x => !!x._runner)
+
+  shows.forEach(s => {
+    s.runner = site.posts
+      .filter(x => x.class === 'Runner')
+      .filter(x => x.name === s._runner)
+      .first()
+  })
+
+  shows.data = shows.data.sort((a, b) => Date.parse(a.start_at) - Date.parse(b.start_at))
+
+  runnerShows = {}
+  shows.forEach (s => {
+    runnerShows[s._runner] = runnerShows[s._runner] || {
+      runner: s.runner,
+      shows: []
+    }
+    runnerShows[s._runner].shows.push(s)
+  })
+
+.activity-runners
+  - Object.keys(runnerShows).forEach(x => {
+    - o = runnerShows[x]
+    - runner = o.runner
+      != partial('_item/RunnerItem', { item: runner })
+  - })

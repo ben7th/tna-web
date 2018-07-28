@@ -1,3 +1,4 @@
+id: tna2
 class: Activity
 name: 第二届线上速通大会
 code: TNA 2

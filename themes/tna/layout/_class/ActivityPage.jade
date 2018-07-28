@@ -1,38 +1,61 @@
--
-  games = site.posts
-    .filter(x => x.class === 'Game')
-    .filter(x => x.display !== 'none')
+.container
+  //- .row
+  //-   .col-lg-10.offset-lg-1
+  //-     h3.goback
+  //-       a(href=url_for('/'))
+  //-         i.fa.fa-arrow-left
+  //-         span 返回 Go back
 
-  runners = site.posts
-    .filter(x => x.class == 'Runner')
-  runners.data = runners.data.sort((a, b) => a.name > b.name ? 1 : -1)
+  .row.activity-page 
+    .col-lg-10.offset-lg-1
+      section.base
+        .title
+          h1= activity.code
+          .name
+            span= activity.name
+            span.gap |
+            span= activity.en_name
+          .date
+            span= date(activity.start_time)
+            span= ` [${moment(activity.start_time).format('ddd')}]`
+        .cover
+          .cc
+            img(src=activity.cover_url)
+        .site
+          .sc
+            img(src=activity.site_img_url)
 
-.main
-  h3.goback
-    a(href=url_for('/'))
-      i.fa.fa-arrow-left
-      span 返回 go back
+      .col-lg-10.offset-lg-1
+        section.intro
+          h3 
+            .cn 活动简介 
+            .en Introduction
+          .freehtml
+            != activity.freehtml
+          .introc
+            != partial('_item/PostContent', { item: activity })
 
-  .leftc
-    h3
-      i.fa.fa-rocket
-      span 活动 Activities
-    section.activities
-      != partial('_item/ActivityItem', { item: activity, showDetail: true })
-      
-  .rightc
-    h3 
-      i.fa.fa-gamepad
-      span 游戏 Games
-    section.games
-      - games.forEach((item, index) => {
-        != partial('_item/GameItem', { item })
-      - })
+      .col-lg-10.offset-lg-1
+        section.video
+          - if (activity.ED_video)
+            h3 Ending
+            .video-player
+              .box
+                iframe(src=activity.ED_video.player, scrolling='no', border='0', frameborder='no', framespacing='0', allowfullscreen='true')
 
-    h3 
-      i.fa.fa-user-circle-o
-      span 玩家 Runners
-    section.runners
-      - runners.forEach((item, index) => {
-        != partial('_item/RunnerItem', { item })
-      - })
+      section
+        h3
+          .cn 速通玩家 
+          .en Runners
+        != partial('_item/ActivityRunners', { activity })
+
+      section.schedule
+        h3 
+          .cn 日程表 
+          .en Schedule
+        != partial('_item/ActivitySchedule', { activity })
+
+      section.discuss
+        a(href=activity.discuss_link, target='_blank') 
+          i.fa.fa-comment
+          span 参与讨论
