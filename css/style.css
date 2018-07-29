@@ -509,6 +509,34 @@ a.link:hover {
   margin-bottom: 0;
   line-height: 1;
 }
+.footer {
+  border: solid 1px rgba(255,255,255,0.4);
+  padding: 3px;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+  border-width: 1px 0 0 0;
+  padding: 3px 0 0 0;
+}
+.footer .bbox {
+  background-color: rgba(0,0,0,0.3);
+}
+.footer .post-content-markdown {
+  padding: 1rem;
+  background-color: rgba(0,0,0,0.3);
+}
+.footer .bbox {
+  height: 48px;
+  background-color: rgba(0,0,0,0.3);
+}
+.footer .bbox.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .bbox.center h5 {
+  margin-top: 3px;
+  margin-bottom: 0;
+  line-height: 1;
+}
 .container {
   padding-top: 2rem;
   position: relative;
