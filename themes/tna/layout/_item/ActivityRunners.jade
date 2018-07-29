@@ -23,8 +23,11 @@
   })
 
 .activity-runners
-  - Object.keys(runnerShows).forEach(x => {
-    - o = runnerShows[x]
-    - runner = o.runner
-      != partial('_item/RunnerItem', { item: runner })
-  - })
+  - if (Object.keys(runnerShows).length > 0)
+    - Object.keys(runnerShows).forEach(x => {
+      - o = runnerShows[x]
+      - runner = o.runner
+        != partial('_item/RunnerItem', { item: runner })
+    - })
+  - else
+    .applying= activity.runners_blank

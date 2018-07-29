@@ -1,6 +1,7 @@
 -
   activities = site.posts.filter(x => x.class == 'Activity')
-  activities.data = activities.data.sort((a, b) => b.start_time - a.start_time)
+  activities.data = activities.data
+    .sort((a, b) => Date.parse(b.start_time) - Date.parse(a.start_time))
 
   games = site.posts
     .filter(x => x.class === 'Game')
@@ -10,37 +11,52 @@
     .filter(x => x.class == 'Runner')
   runners.data = runners.data.sort((a, b) => a.name > b.name ? 1 : -1)
 
-.site
-  .logo
-    img(src='/img/tna-logo.png')
-  .title
-    h1.t T.N.A.
-    h5.desc Speedrun, Together Not Alone
+  blogs = site.posts
+    .filter(x => x.class === 'Blog')
+  blogs.data = blogs.data
+    .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
 
-.row
-  .col-3
-    h3 
-      i.fa.fa-rocket
-      span 活动 Activities
-    section.activities
-      - activities.forEach((item, index) => {
-        != partial('_item/ActivityItem', { item })
-      - })
-      
-  .col-9
-    h3 
-      i.fa.fa-gamepad
-      span 游戏 Games
-    section.games
-      - games.forEach((item, index) => {
-        != partial('_item/GameItem', { item })
-      - })
+.header
+  .bbox.center
+    h5 
+      a(href=url_for('/'))
+        i.fa.fa-home
+        span TNA Speedrun
 
-    h3 
-      i.fa.fa-user-circle-o
-      span 玩家 Runners
-    section.runners
-      - runners.forEach((item, index) => {
-        != partial('_item/RunnerItem', { item })
-      - })
+.container.index-page
+  .row
+    .col-lg-4
+      h3 
+        i.fa.fa-rocket
+        span 活动 Activities
+      section.activities
+        - activities.forEach((item, index) => {
+          != partial('_item/ActivityItem', { item })
+        - })
+        
+    .col-lg-8
+      section.recently
+        h3
+          i.fa.fa-newspaper-o
+          span 最近动态 Recently
+        != partial('_item/IndexBlogs', { blogs })
+
+
+
+      // section.games
+      //   h3 
+      //     i.fa.fa-gamepad
+      //     span 游戏 Games
+      //   section.games
+      //     - games.forEach((item, index) => {
+      //       != partial('_item/GameItem', { item })
+      //     - })
+
+      // h3 
+      //   i.fa.fa-user-circle-o
+      //   span 玩家 Runners
+      // section.runners
+      //   - runners.forEach((item, index) => {
+      //     != partial('_item/RunnerItem', { item })
+      //   - })
 

@@ -1,3 +1,9 @@
+.header
+  .bbox.center
+    h5 
+      a(href=url_for('/'))
+        i.fa.fa-home
+        span TNA Speedrun
 .container
   //- .row
   //-   .col-lg-10.offset-lg-1
@@ -17,13 +23,16 @@
             span= activity.en_name
           .date
             span= date(activity.start_time)
-            span= ` [${moment(activity.start_time).format('ddd')}]`
-        .cover
-          .cc
-            img(src=activity.cover_url)
-        .site
-          .sc
-            img(src=activity.site_img_url)
+            span= ` [${moment(activity.start_time).format('ddd')}.]`
+          if (activity.state)
+            .state(class=activity.state)
+              .st= activity.state
+          if (activity.logohtml)
+            .logohtml!= activity.logohtml
+        if (activity.cover_url)
+          .cover
+            .cc
+              img(src=activity.cover_url)
 
       .col-lg-10.offset-lg-1
         section.intro
@@ -32,16 +41,18 @@
             .en Introduction
           .freehtml
             != activity.freehtml
-          .introc
-            != partial('_item/PostContent', { item: activity })
+          if activity.content
+            .introc
+              != partial('_item/PostContent', { item: activity })
 
       .col-lg-10.offset-lg-1
-        section.video
-          - if (activity.ED_video)
-            h3 Ending
+        - for (vt of Object.keys(activity.videos))
+          section.video
+            - video = activity.videos[vt]
+            h3= vt
             .video-player
               .box
-                iframe(src=activity.ED_video.player, scrolling='no', border='0', frameborder='no', framespacing='0', allowfullscreen='true')
+                iframe(src=video.player, scrolling='no', border='0', frameborder='no', framespacing='0', allowfullscreen='true')
 
       section
         h3

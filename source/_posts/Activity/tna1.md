@@ -4,7 +4,20 @@ class: Activity
 code: TNA 1st
 name: 第一届线上速通大会
 en_name: Together Not Alone 1st
-cover_url: http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/activities/tna1w.png
+<!-- cover_url: http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/activities/tna1w.png -->
+
+start_time: 2018-03-25 12:00
+end_time: 2018-03-25 23:30
+state: completed
+site: https://live.bilibili.com/
+liveroom_url: https://live.bilibili.com/38593
+
+videos: 
+  'The Final': 
+    url: https://www.bilibili.com/video/av21159911
+    player: //player.bilibili.com/player.html?aid=21159911&cid=34766407&page=1
+
+discuss_link: https://www.bilibili.com/read/cv277218
 
 freehtml: "
   <style>
@@ -98,22 +111,16 @@ freehtml: "
     </div>
   </div>
 "
-
-start_time: 2018-03-25 12:00
-end_time: 2018-03-25 23:30
-state: finished
-site: https://live.bilibili.com/
-liveroom_url: https://live.bilibili.com/38593
-
-OP_video: 
-ED_video: 
-  url: https://www.bilibili.com/video/av21159911
-  player: //player.bilibili.com/player.html?aid=21159911&cid=34766407&page=1
-discuss_link: https://www.bilibili.com/read/cv277218
 ---
 
 TNA —— Together Not Alone 速通活动，目的是以中文圈为主力的线上速通马拉松活动，本次是第一届，目标是尝试进行一次综合性马拉松的举行来吸引大家关注速通，尝试速通，也希望能吸引其他的速通爱好者来加入其中。
 
+TNA1 将于 3 月 25 日于 Bilibili 直播间 38593 进行总转播，本次活动请到了多平台不同项目的 runner，希望能给大家带来一场满意的活动。
+
+同时也将于活动中进行抽奖，奖品分别是一份 PC 版空洞骑士与一份 PC 版茶杯头。
+
+by [感受不到的风吹过](https://space.bilibili.com/599126/#/)
+<br />
 
 TNA 1 线上速通活动简介
 https://www.bilibili.com/read/cv277218

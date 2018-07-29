@@ -10,7 +10,8 @@
       .first()
   })
 
-  shows.data = shows.data.sort((a, b) => Date.parse(a.start_at) - Date.parse(b.start_at))
+  shows.data = shows.data
+    .sort((a, b) => Date.parse(a.start_at) - Date.parse(b.start_at))
 
 .activity-schedule
   .table-responsive
@@ -24,6 +25,11 @@
           th 规则/平台
           th 视频回放
       tbody
+        - if (shows.length === 0)
+          tr
+            td.applying(colspan=6) 
+              i.fa.fa-calendar
+              span 正在筹备
         - shows.forEach(show => {
           tr
             td.name

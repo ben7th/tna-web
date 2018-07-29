@@ -1,0 +1,9 @@
+.index-blogs
+  - blogs.forEach(x => {
+    .blog
+      h4.title
+        span.t= x.title
+        span.d= x.date.format('YYYY-MM-DD HH:mm')
+      .bct
+        .bbox!=partial('_item/PostContent', { item: x })
+  - })

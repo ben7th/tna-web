@@ -3,6 +3,7 @@
 @import "_class/_activity"
 @import "_class/_runner"
 @import "_class/_game"
+@import "_class/_blog"
 @import "_content"
 
 h1, h2, h3, h4, h5, h6
@@ -20,12 +21,23 @@ a.link
 .titlefont
   font-family $fontTitle
 
-$hh = 144px
+$hh = 48px
 .header
-  height $hh
-  background-color rgba($mainColor1, 0.05)
-  // border-bottom solid 1px rgba(white 0.2)
-  box-shadow 0 0 20px rgba(black, 0.5)
+  // height $hh
+  borderBox()
+  border-width 0 0 1px 0
+  padding 0 0 3px 0
+  .bbox
+    height $hh
+    background-color rgba(black, 0.3)
+    &.center
+      display flex
+      align-items center
+      justify-content center
+      h5
+        margin-top 3px
+        margin-bottom 0
+        line-height 1
 
 .container
   padding-top 2rem
@@ -33,41 +45,7 @@ $hh = 144px
   
   section
     margin-bottom 2rem
-  
-  // .site
-  //   position absolute
-  //   top - $hh
-  //   height $hh
-  //   display flex
-  //   align-items center
-
-  //   .logo
-  //     margin-right 2rem
-  //     img
-  //       height 72px
-  //       width auto
-  //   .title
-  //     text-shadow $commonTextShadow
-  //     font-family: $fontTitle
-  //     display flex
-  //     justify-content center
-  //     flex-direction column
-  //     .desc
-  //       opacity 0.6
-  //       margin-bottom 0
-
-  // .goback
-  //   text-shadow $commonTextShadow
-  //   font-family: $fontTitle
-  //   position absolute
-  //   top - $hh
-  //   height $hh
-  //   display flex
-  //   align-items center
-  //   i
-  //     margin-right 18px
-  //     opacity 0.6
-  //   a
-  //     transition: text-shadow 0.3s ease
-  //   a:hover
-  //     text-shadow $titleTextShadowLight
+    
+.index-page
+  h3
+    margin-bottom 2rem
