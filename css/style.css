@@ -270,6 +270,7 @@ section.activities .item.activity .state.completed {
 }
 .activity-page .activity-schedule table th {
   padding: 6px;
+  color: #ffcb50;
 }
 .activity-page .activity-schedule table td.applying {
   line-height: 42px;
@@ -316,6 +317,9 @@ section.activities .item.activity .state.completed {
 }
 .activity-page .activity-schedule table td.video .realtime {
   opacity: 0.6;
+}
+.activity-page .activity-schedule.entry-form table td {
+  height: auto;
 }
 .activity-page .discuss {
   text-align: center;
@@ -437,6 +441,9 @@ section.games .item.game .info .name {
 .index-blogs .blog .post-content-markdown {
   padding: 1rem;
   background-color: rgba(0,0,0,0.3);
+}
+.post-content-markdown {
+  font-size: 1rem;
 }
 .post-content-markdown a {
   color: #6fa2f7;
