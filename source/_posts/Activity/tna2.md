@@ -32,7 +32,7 @@ logohtml: "
     }
   </style>
   <div class='tna2logo'>
-    <img src='http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/activities/tna2.png' />
+    <img src='http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/activities/tna2-d7ecff.png' />
   </div>
 "
 

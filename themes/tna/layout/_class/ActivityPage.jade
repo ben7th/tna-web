@@ -5,13 +5,6 @@
         i.fa.fa-home
         span TNA Speedrun
 .container
-  //- .row
-  //-   .col-lg-10.offset-lg-1
-  //-     h3.goback
-  //-       a(href=url_for('/'))
-  //-         i.fa.fa-arrow-left
-  //-         span 返回 Go back
-
   .row.activity-page 
     .col-lg-10.offset-lg-1
       section.base
@@ -59,6 +52,14 @@
           .cn 速通玩家 
           .en Runners
         != partial('_item/ActivityRunners', { activity })
+
+      - d = site.data[activity.id]
+      - if (d && d.applying)
+        section.entry-form#entry-form
+          h3
+            .cn 报名表
+            .en Entry Form
+          != partial('_item/ActivityEntryForm', { applying: d.applying })
 
       section.schedule
         h3 

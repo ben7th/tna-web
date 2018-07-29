@@ -1,0 +1,92 @@
+applying:
+  - _runner: Code
+    _game: I wanna be the overlord
+
+  - _runner: DJ
+    _game: 蔚蓝
+
+  - _runner: gameNmagic
+    _game: 
+      - 塞尔达传说·荒野之息
+      - 超级马里奥·奥德赛
+
+  - _runner: Rua
+    _game: 空洞骑士
+
+  - _runner: Vipeazone
+    _game: X战警前传金刚狼
+
+  - _runner: yinger
+    _game: 忍者猫
+    _rule: Beat The Game
+    _est: 00:15′
+
+  - _runner: 悲剧爷
+    _game: 生化危机2
+    _rule: NGC 美版 里昂表关 Any%
+    _est: 00:52′
+
+  - _runner: 伯爵
+    _game: 战神 2018
+    _rule: 女武神%
+    _est: 00:55′
+
+  - _runner: 创世丶魔术师
+    _game: 空洞骑士
+    _rule: 106%
+
+  - _runner: 哆啦二猪
+    _game: 塞尔达传说·荒野之息
+    _rule: Any%
+
+  - _runner: 港湾丶微米
+    _game: 空洞骑士
+
+  - _runner: 涵三
+    _game: 洛克人3
+    _rule: Any%
+    _est: 00:38′
+
+  - _runner: 火华君
+    _game: 银河战士AM2R
+
+  - _runner: 篮球
+    _game: 
+      - 血源诅咒
+      - 黑暗之魂1RM
+
+  - _runner: 楼座
+    _game: 尼尔·自动人形
+    _rule: Any% A Ending
+    _est: 01:40′
+
+  - _runner: 猫德
+    _game: 猎天使魔女
+    _rule: Any% Normal Newgame
+    _est: 02:05′
+
+  - _runner: 美美
+    _game: 蔷薇十字小剑2
+    _rule: Any% Freudia, Stachel Only
+    _est: 00:55′
+
+  - _runner: 帕秋莉
+    _game: Duet
+
+  - _runner: 三鼬
+    _game: 
+      - 黑暗之魂3
+      - 仁王
+
+  - _runner: oO水晶梦幻Oo
+    _game: 银河战士融合
+    _rule: 100%
+
+  - _runner: 鲜血染红的樱花树
+    _game: 空洞骑士
+
+  - _runner: 鸦karas
+    _game: 战神 2018
+
+  - _runner: 依诺祈
+    _game: 空洞骑士

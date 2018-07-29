@@ -1,0 +1,26 @@
+.activity-schedule.entry-form
+  .table-responsive
+    table.table.table-dark.table-striped
+      thead
+        tr
+          th 报名人
+          th 游戏
+          th 规则
+          th 预计时间
+      tbody
+        - applying.forEach(x => {
+          tr
+            td
+              = x._runner
+            td
+              - if (typeof(x._game) === 'string')
+                .game= x._game
+              - else
+                - for (_g of x._game)
+                  .game= _g
+
+            td
+              = x._rule
+            td
+              = x._est
+        - })
