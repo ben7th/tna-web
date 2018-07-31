@@ -16,20 +16,15 @@
   blogs.data = blogs.data
     .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
 
-.header
-  .bbox.center
-    h5 
-      a(href=url_for('/'))
-        i.fa.fa-home
-        span TNA Speedrun
+!= partial('_layout/header')
 
 .container.index-page
   .row
     .col-lg-4
-      h3 
-        i.fa.fa-rocket
-        span 活动 Activities
       section.activities
+        h3
+          span 活动 
+          span.sub Activities
         - activities.forEach((item, index) => {
           != partial('_item/ActivityItem', { item })
         - })
@@ -37,8 +32,8 @@
     .col-lg-8
       section.recently
         h3
-          i.fa.fa-newspaper-o
-          span 最近动态 Recently
+          span 最近动态 
+          span.sub Recently
         != partial('_item/IndexBlogs', { blogs })
 
 

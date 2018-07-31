@@ -106,7 +106,7 @@ freehtml: "
       <div class='ccc'>
         <i class='fa fa-video-camera'></i>
         <h4>直播平台</h4>
-        <h5>live</h5>
+        <h5 class='tfont'>live</h5>
         <div class='live-site-img'>
           <img src='http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/activities/huya.png' />
         </div>
@@ -119,7 +119,7 @@ freehtml: "
       <div class='ccc'>
         <i class='fa fa-clock-o'></i>
         <h4>活动时间</h4>
-        <h5>time</h5>
+        <h5 class='tfont'>time</h5>
         <div class='ti'>
           <div class='date titlefont'>2018 年 10 月 1 日</div>
           <div class='ttime titlefont'>??:??</div>

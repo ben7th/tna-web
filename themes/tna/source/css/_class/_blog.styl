@@ -2,27 +2,35 @@
   .blog
     margin-bottom 1rem
     .title
-      padding 1rem
+      padding 0.5rem 1rem
       background-color rgba(black, 0.2)
       margin-bottom 0
       border-bottom dashed 1px rgba($mainColor1, 0.5)
       display flex
-      align-items center
-      &::before
-        content ''
-        width 28px
-        height 28px
-        background url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/celeste-strawberry-1.png') no-repeat
-        background-size cover
-        margin-right 0.5rem
-        position relative
-        top -2px
-        // border-radius 100px
-        // box-shadow 0 0 10px black
+      flex-wrap wrap
+      align-items flex-end
+      // font-weight 300
       .t
+        font-size 24px
         flex 1
+        display flex
+        align-items center
+        white-space nowrap
+        &::before
+          content ''
+          width 30px
+          height 30px
+          background url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/celeste-strawberry.png') no-repeat
+          background-size cover
+          margin-right 0.5rem
+          position relative
+          // border-radius 100px
+          // box-shadow 0 0 10px black
       .d
-        font-size 18px
+        font-size 16px
+        // margin-top 16px * 0.3
         opacity 0.6
+        margin-left 36px
+        font-family $fontTitle
     borderBox()
       

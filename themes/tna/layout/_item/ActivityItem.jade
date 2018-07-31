@@ -1,15 +1,10 @@
-if !showDetail
-  a.item.activity(href=url_for(item.path))
-    .code= item.code
-    .name= item.name
-    .date= date(item.start_time)
-    .state(class=item.state)= item.state
+//- 首页上的活动列表
 
-else
-  .item.activity
-    .code= item.code
-    .name= item.name
-    .date= date(item.start_time)
-
-  .activity.detail
-    .state(class=item.state)= item.state
+a.item.activity(href=url_for(item.path))
+  .ibox
+    .code
+      span.c= item.code
+      span.state(class=item.state)= item.state
+    .info
+      .name= item.name
+      .date= date(item.start_time)

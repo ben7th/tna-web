@@ -1,9 +1,6 @@
 state()
-  border-top solid 3px $mainColor1
-  border-bottom solid 3px $mainColor1
-  line-height 0.8
-  padding 8px 0 4px
   font-size 16px
+  font-family $fontTitle
   &.incoming
     border-color $goldenColor
     color $goldenColor
@@ -13,28 +10,37 @@ state()
 
 section.activities
   .item.activity
-    position relative
-    border-left solid 6px rgba($mainColor1, 0.6)
-    padding 12px
-    background-color rgba(white, 0.1)
-    font-size 20px
     display block
-    font-family $fontTitle
+    border solid 1px rgba(white, 0.4)
+    padding 3px
     margin-bottom 1rem
     &:hover
-      background-color rgba(white, 0.2)
+      background-color rgba(white, 0.1)
+    .ibox
+      border-left solid 6px rgba($mainColor1, 0.6)
+      background-color rgba(white, 0.1)
+      position relative
     .code
+      padding 0.5rem 1rem
       margin-bottom 0.5rem
-      border-bottom solid 1px rgba($mainColor1, 0.2)
-    .name
-    .date
+      border-bottom dashed 1px rgba($mainColor1, 0.5)
+      font-size 24px
+      font-family $fontTitle
+      display flex
+      align-items flex-end
+      span.c
+        position relative
+        top 24px * 0.2
+        flex 1
+      span.state
+        state()
+        
+    .info
+      padding 0.5rem 1rem
       font-size 16px
       opacity 0.6
-    .state
-      state()
-      position absolute
-      top 6px
-      right 6px
+      .date
+        font-family $fontTitle
 
 
 .activity-page
@@ -213,7 +219,8 @@ section.activities
   .discuss
     text-align center
     a
-      padding 1rem 1.5rem
+      border-radius 100px
+      padding 1rem 2rem
       background-color rgba(white, 0.2)
       font-size 24px
       &:hover

@@ -8,12 +8,20 @@
 
 h1, h2, h3, h4, h5, h6
   font-weight 300
-  font-family $fontTitle
   &.light
     text-shadow $titleTextShadow
   i
     margin-right 1rem
     opacity 0.6
+  &.tfont
+    font-family $fontTitle
+    
+h3
+  span.sub
+    opacity 0.6
+    font-size 28px * 0.6
+    // position relative
+    // top 28px * 0.6 * 0.1
     
 a.link
   link()
@@ -21,47 +29,68 @@ a.link
 .titlefont
   font-family $fontTitle
 
-$hh = 48px
-.header
-  // height $hh
-  borderBox()
-  border-width 0 0 1px 0
-  padding 0 0 3px 0
-  .bbox
-    height $hh
-    background-color rgba(black, 0.3)
-    &.center
-      display flex
-      align-items center
-      justify-content center
-      h5
-        margin-top 3px
-        margin-bottom 0
-        line-height 1
-        
-.footer
-  borderBox()
-  border-width 1px 0 0 0
-  padding 3px 0 0 0
-  .bbox
-    height $hh
-    background-color rgba(black, 0.3)
-    &.center
-      display flex
-      align-items center
-      justify-content center
-      h5
-        margin-top 3px
-        margin-bottom 0
-        line-height 1
-
-.container
-  padding-top 2rem
-  position relative
+body.site
+  display flex
+  min-height 100vh
+  flex-direction column
   
-  section
-    margin-bottom 2rem
+  $hh = 48px
+  .header
+    // height $hh
+    borderBox()
+    border-width 0 0 1px 0
+    padding 0 0 3px 0
+    .bbox
+      height $hh
+      background-color rgba(black, 0.3)
+      &.center
+        display flex
+        align-items center
+        justify-content center
+        h5
+          margin-top 3px
+          margin-bottom 0
+          line-height 1
+          
+  .footer
+    borderBox()
+    border-width 1px 0 0 0
+    padding 3px 0 0 0
+    .bbox
+      height $hh
+      background-color rgba(black, 0.3)
+      &.center
+        display flex
+        align-items center
+        justify-content center
+        h5
+          margin-top 3px
+          margin-bottom 0
+          line-height 1
+
+  .container
+    padding-top 2rem
+    position relative
+    flex 1
     
-.index-page
-  h3
-    margin-bottom 2rem
+    section
+      margin-bottom 2rem
+      
+    &.index-page
+      section.activities h3
+      section.recently h3
+        display flex
+        align-items flex-end
+        &::before
+          content ''
+          width 38.57px
+          height 38.57px
+          background url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/celeste-blue-heart.png') no-repeat
+          background-size cover
+          margin-right 0.5rem
+          position relative
+        .sub 
+          margin-left 0.5rem
+          position relative
+      h3
+        margin-bottom 2rem

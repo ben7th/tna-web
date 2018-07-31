@@ -1,8 +1,20 @@
+!= partial('_layout/header')
+
 if (page.class == 'Game')
   != partial('_class/Game', { game: page })
   
-if (page.class == 'Runner')
+else if (page.class == 'Runner')
   != partial('_class/Runner', { runner: page })
 
-if (page.class === 'Activity')
+else if (page.class === 'Activity')
   != partial('_class/ActivityPage', { activity: page })
+
+else if (page.specialPage === '404')
+  != page.freehtml
+
+else if (page.specialPage === 'changelog')
+  .container
+    != partial('_item/PostContent', { item: page })
+
+else
+  .container
