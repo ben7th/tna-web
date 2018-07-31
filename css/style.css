@@ -435,8 +435,8 @@ section.games .item.game .info .name {
 }
 .index-blogs .blog .title .t::before {
   content: '';
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   background: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/celeste-strawberry.png") no-repeat;
   background-size: cover;
   margin-right: 0.5rem;
@@ -454,6 +454,10 @@ section.games .item.game .info .name {
 .index-blogs .blog .post-content-markdown {
   padding: 1rem;
   background-color: rgba(0,0,0,0.3);
+}
+.index-blogs .blog.top .title .t::before {
+  background: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/celeste-strawberry-gold.png") no-repeat;
+  background-size: cover;
 }
 .post-content-markdown {
   font-size: 1rem;
@@ -589,8 +593,8 @@ body.site .container.index-page section.recently h3 {
 body.site .container.index-page section.activities h3::before,
 body.site .container.index-page section.recently h3::before {
   content: '';
-  width: 38.57px;
-  height: 38.57px;
+  width: 36px;
+  height: 36px;
   background: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/celeste-blue-heart.png") no-repeat;
   background-size: cover;
   margin-right: 0.5rem;
