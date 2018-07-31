@@ -409,29 +409,35 @@ section.games .item.game .info .name {
   box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
 }
 .index-blogs .blog .title {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   background-color: rgba(0,0,0,0.2);
   margin-bottom: 0;
   border-bottom: dashed 1px rgba(215,236,255,0.5);
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-end;
 }
-.index-blogs .blog .title::before {
+.index-blogs .blog .title .t {
+  font-size: 24px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.index-blogs .blog .title .t::before {
   content: '';
-  width: 28px;
-  height: 28px;
-  background: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/celeste-strawberry-1.png") no-repeat;
+  width: 30px;
+  height: 30px;
+  background: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/celeste-strawberry.png") no-repeat;
   background-size: cover;
   margin-right: 0.5rem;
   position: relative;
-  top: -2px;
-}
-.index-blogs .blog .title .t {
-  flex: 1;
 }
 .index-blogs .blog .title .d {
-  font-size: 18px;
+  font-size: 16px;
   opacity: 0.6;
+  margin-left: 36px;
+  font-family: "Orbitron", sans-serif;
 }
 .index-blogs .blog .bbox {
   background-color: rgba(0,0,0,0.3);
@@ -475,6 +481,10 @@ h5 i,
 h6 i {
   margin-right: 1rem;
   opacity: 0.6;
+}
+h3 span.sub {
+  opacity: 0.6;
+  font-size: 16.8px;
 }
 a.link {
   color: #6fa2f7;
@@ -554,6 +564,28 @@ body.site .container {
 }
 body.site .container section {
   margin-bottom: 2rem;
+}
+body.site .container.index-page section.activities h3,
+body.site .container.index-page section.recently h3 {
+  display: flex;
+  align-items: flex-end;
+}
+body.site .container.index-page section.activities h3::before,
+body.site .container.index-page section.recently h3::before {
+  content: '';
+  width: 38.57px;
+  height: 38.57px;
+  background: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/celeste-blue-heart.png") no-repeat;
+  background-size: cover;
+  margin-right: 0.5rem;
+  position: relative;
+  top: -0.2rem;
+}
+body.site .container.index-page section.activities h3 .sub,
+body.site .container.index-page section.recently h3 .sub {
+  margin-left: 0.5rem;
+  position: relative;
+  top: -0.2rem;
 }
 body.site .container.index-page h3 {
   margin-bottom: 2rem;
