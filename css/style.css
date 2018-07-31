@@ -62,44 +62,52 @@ a:active {
   }
 }
 section.activities .item.activity {
-  position: relative;
-  border-left: solid 6px rgba(215,236,255,0.6);
-  padding: 12px;
-  background-color: rgba(255,255,255,0.1);
-  font-size: 20px;
   display: block;
-  font-family: "Orbitron", sans-serif;
+  border: solid 1px rgba(255,255,255,0.4);
+  padding: 3px;
   margin-bottom: 1rem;
 }
 section.activities .item.activity:hover {
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.1);
+}
+section.activities .item.activity .ibox {
+  border-left: solid 6px rgba(215,236,255,0.6);
+  background-color: rgba(255,255,255,0.1);
+  position: relative;
 }
 section.activities .item.activity .code {
+  padding: 0.5rem 1rem;
   margin-bottom: 0.5rem;
-  border-bottom: solid 1px rgba(215,236,255,0.2);
+  border-bottom: dashed 1px rgba(215,236,255,0.5);
+  font-size: 24px;
+  font-family: "Orbitron", sans-serif;
+  display: flex;
+  align-items: flex-end;
 }
-section.activities .item.activity .name,
-section.activities .item.activity .date {
+section.activities .item.activity .code span.c {
+  position: relative;
+  top: 4.800000000000001px;
+  flex: 1;
+}
+section.activities .item.activity .code span.state {
   font-size: 16px;
-  opacity: 0.6;
+  font-family: "Orbitron", sans-serif;
 }
-section.activities .item.activity .state {
-  border-top: solid 3px #d7ecff;
-  border-bottom: solid 3px #d7ecff;
-  line-height: 0.8;
-  padding: 8px 0 4px;
-  font-size: 16px;
-  position: absolute;
-  top: 6px;
-  right: 6px;
-}
-section.activities .item.activity .state.incoming {
+section.activities .item.activity .code span.state.incoming {
   border-color: #ffcb50;
   color: #ffcb50;
 }
-section.activities .item.activity .state.completed {
+section.activities .item.activity .code span.state.completed {
   border-color: #d7ecff;
   opacity: 0.5;
+}
+section.activities .item.activity .info {
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  opacity: 0.6;
+}
+section.activities .item.activity .info .date {
+  font-family: "Orbitron", sans-serif;
 }
 .activity-page section {
   margin-bottom: 6rem !important;
@@ -325,7 +333,8 @@ section.activities .item.activity .state.completed {
   text-align: center;
 }
 .activity-page .discuss a {
-  padding: 1rem 1.5rem;
+  border-radius: 100px;
+  padding: 1rem 2rem;
   background-color: rgba(255,255,255,0.2);
   font-size: 24px;
 }
@@ -463,7 +472,6 @@ h4,
 h5,
 h6 {
   font-weight: 300;
-  font-family: "Orbitron", sans-serif;
 }
 h1.light,
 h2.light,
@@ -481,6 +489,14 @@ h5 i,
 h6 i {
   margin-right: 1rem;
   opacity: 0.6;
+}
+h1.tfont,
+h2.tfont,
+h3.tfont,
+h4.tfont,
+h5.tfont,
+h6.tfont {
+  font-family: "Orbitron", sans-serif;
 }
 h3 span.sub {
   opacity: 0.6;
@@ -579,13 +595,11 @@ body.site .container.index-page section.recently h3::before {
   background-size: cover;
   margin-right: 0.5rem;
   position: relative;
-  top: -0.2rem;
 }
 body.site .container.index-page section.activities h3 .sub,
 body.site .container.index-page section.recently h3 .sub {
   margin-left: 0.5rem;
   position: relative;
-  top: -0.2rem;
 }
 body.site .container.index-page h3 {
   margin-bottom: 2rem;
