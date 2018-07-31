@@ -33,3 +33,45 @@ $cw = 60px
     .nickname
       font-size 14px
       opacity 0.6
+      
+.runners-page
+  margin-bottom 2rem
+  h3
+    // text-align center
+    margin-bottom 1rem
+  .tbox
+    borderBox()
+  
+  $avatarw = 32px
+  table
+    td .tdi
+      display flex
+      align-items center
+      min-height $avatarw
+    td.runner
+      img.avatar
+        width $avatarw
+        height $avatarw
+        border-radius 100px
+        margin-right 0.5rem
+    td.liveroom
+      span.site
+        display flex
+        align-items center
+      span.site
+        &::before
+          content ''
+          width 32px
+          height 32px
+          background-size cover
+          background-repeat no-repeat
+          background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/huya.png')
+          margin-right 0.5rem
+        &.huya::before
+          background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/huya.png')
+        &.douyu::before
+          background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/douyu.png')
+        &.bilibili::before
+          background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/bilibili.png')
+        &.twitch::before
+          background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/twitch.png')

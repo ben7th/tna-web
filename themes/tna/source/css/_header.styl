@@ -1,0 +1,37 @@
+body.site
+  $hh = 48px
+  > .header
+    // height $hh
+    borderBox()
+    border-width 0 0 1px 0
+    padding 0 0 3px 0
+    .bbox
+      height $hh
+      background-color rgba(black, 0.3)
+      &.center
+        display flex
+        align-items center
+        justify-content center
+        h5.site-title
+          margin-top 3px
+          margin-bottom 0
+          line-height 1
+          margin-right 1rem
+        a.link
+          font-size 18px
+          color $mainColor1
+          border 0 none
+          height 100%
+          display flex
+          align-items center
+          padding 0 1rem
+          margin-top 3px
+          &:hover
+            background-color rgba(white, 0.1)
+          &::before
+            content ''
+            width 30px
+            height 30px
+            background url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/celeste-jump-point.png') no-repeat
+            background-size cover
+            margin-right 0.5rem

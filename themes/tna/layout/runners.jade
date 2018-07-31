@@ -1,0 +1,42 @@
+-
+  runners = site.posts
+    .filter(x => x.class === 'Runner')
+  runners.data = runners.data
+    .sort((a, b) => b.updated - a.updated)
+
+
+!= partial('_layout/header')
+
+.container
+  .runners-page
+    h3.tfont Runners Data
+    .tbox
+      .table-responsive
+        table.table.table-dark.table-striped
+          thead
+            tr
+              th Runner
+              th 直播间
+              th 微博
+              th 标签
+              th 资料更新时间
+          tbody
+            - runners.forEach((x) => {
+                tr
+                  td.runner
+                    .tdi
+                      img.avatar(src=x.avatar_url)
+                      span.name= x.name
+                  td.liveroom
+                    .tdi!= partial('_utils/liveroom-link', { url: x.liveroom_url })
+                  td
+                    .tdi
+                      - if (x.weibo)
+                        - wurl = x.weibo
+                        - wtext = x.weibo.replace('https://', '')
+                        a.link(href=wurl, target='_blank')= wtext
+                  td
+                    .tdi!= partial('_utils/tags', { tags: x.tags })
+                  td
+                    .tdi= x.updated.format('YYYY-MM-DD HH:mm')
+            - })

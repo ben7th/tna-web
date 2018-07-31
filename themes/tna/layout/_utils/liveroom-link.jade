@@ -1,0 +1,8 @@
+-
+  if (url) {
+    site = url.match(/(huya|douyu|twitch|bilibili)/)[0]
+    text = url.replace('https://', '').replace('www.', '')
+  }
+
+span.site(class=site)
+  a.link.site(href=url, target='_blank')= text

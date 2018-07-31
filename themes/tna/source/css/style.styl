@@ -5,6 +5,7 @@
 @import "_class/_game"
 @import "_class/_blog"
 
+@import "_header"
 @import "_index-header"
 @import "_content"
 
@@ -29,30 +30,36 @@ a.link
   
 .titlefont
   font-family $fontTitle
+  
+table.table
+  margin-bottom 0
+  color white
+  background-color rgba(black, 0.4)
+  font-size 14px
+  th, td
+    border 0 none
+  td
+    box-sizing content-box
+    padding 6px
+    line-height 21px
+  th
+    padding 6px
+    color $goldenColor
+    white-space nowrap
+
+span.tag
+  font-size 12px
+  background-color rgba(white, 0.2)
+  padding 0 10px
+  border-radius 100px
+  white-space nowrap
 
 body.site
   display flex
   min-height 100vh
   flex-direction column
-  
-  $hh = 48px
-  > .header
-    // height $hh
-    borderBox()
-    border-width 0 0 1px 0
-    padding 0 0 3px 0
-    .bbox
-      height $hh
-      background-color rgba(black, 0.3)
-      &.center
-        display flex
-        align-items center
-        justify-content center
-        h5
-          margin-top 3px
-          margin-bottom 0
-          line-height 1
           
+  $hh = 48px
   > .footer
     borderBox()
     border-width 1px 0 0 0

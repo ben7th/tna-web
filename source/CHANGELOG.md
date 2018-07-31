@@ -3,6 +3,10 @@ specialPage: changelog
 
 <h3 class='tfont' style='margin-bottom: 2rem'>CHANGELOG</h3>
 
+2018-08-01
+
+- 增加了 Runners 页面
+
 2018-07-31 
 
 - 增加了 404 页面
