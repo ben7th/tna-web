@@ -1,11 +1,12 @@
 specialPage: changelog
 ---
 
-<h3 class='tfont'>CHANGELOG</h3>
+<h3 class='tfont' style='margin-bottom: 2rem'>CHANGELOG</h3>
 
 2018-07-31 
 
 - 增加了 404 页面
+- 增加了 CHANGELOG 页面
 
 2018-07-30
 

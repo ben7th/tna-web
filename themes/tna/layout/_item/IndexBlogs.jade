@@ -1,5 +1,18 @@
+-
+  top_blogs = blogs.filter(x => x.top)
+  common_blogs = blogs.filter(x => !x.top)
+
 .index-blogs
-  - blogs.forEach(x => {
+  - top_blogs.forEach(x => {
+    .blog.top
+      .title
+        span.t= x.title
+        span.d= x.date.format('YYYY-MM-DD HH:mm')
+      .bct
+        .bbox!=partial('_item/PostContent', { item: x })
+  - })
+
+  - common_blogs.forEach(x => {
     .blog
       .title
         span.t= x.title

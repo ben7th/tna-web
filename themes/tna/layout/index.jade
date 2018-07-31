@@ -11,16 +11,16 @@
     .filter(x => x.class == 'Runner')
   runners.data = runners.data.sort((a, b) => a.name > b.name ? 1 : -1)
 
-  blogs = site.posts
-    .filter(x => x.class === 'Blog')
+  blogs = site.posts.filter(x => x.class === 'Blog')
   blogs.data = blogs.data
     .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
 
 != partial('_layout/header')
+!= partial('_layout/index-header-mario')
 
 .container.index-page
   .row
-    .col-lg-4
+    .col-md-4
       section.activities
         h3
           span 活动 
@@ -29,7 +29,7 @@
           != partial('_item/ActivityItem', { item })
         - })
         
-    .col-lg-8
+    .col-md-8
       section.recently
         h3
           span 最近动态 

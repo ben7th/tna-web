@@ -1,6 +1,6 @@
 .container
   .row.activity-page 
-    .col-lg-10.offset-lg-1
+    .col-md-10.offset-md-1
       section.base
         .title
           h1.tfont= activity.code
@@ -21,7 +21,7 @@
             .cc
               img(src=activity.cover_url)
 
-      .col-lg-10.offset-lg-1
+      .col-md-10.offset-md-1
         section.intro
           h3.tfont 
             .cn 活动简介 
@@ -32,7 +32,7 @@
             .introc
               != partial('_item/PostContent', { item: activity })
 
-      .col-lg-10.offset-lg-1
+      .col-md-10.offset-md-1
         - for (vt of Object.keys(activity.videos))
           section.video
             - video = activity.videos[vt]
@@ -51,8 +51,8 @@
       - if (d && d.applying)
         section.entry-form#entry-form
           h3.tfont 
-            .cn 报名表
-            .en Entry Form
+            .cn 报名情况
+            .en Entry List
           != partial('_item/ActivityEntryForm', { applying: d.applying })
 
       section.schedule
