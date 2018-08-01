@@ -406,27 +406,16 @@ section.activities .item.activity .info .date {
 .runners-page table td.runner {
   overflow: hidden;
 }
-.runners-page table td.runner a {
+.runners-page table td.runner .rr {
   display: flex;
   align-items: center;
 }
-.runners-page table td.runner a span.name {
-  color: #6fa2f7;
-  border-bottom: dashed 1px #6fa2f7;
-}
-.runners-page table td.runner a img.avatar {
+.runners-page table td.runner .rr img.avatar {
   width: 32px;
   height: 32px;
   border-radius: 100px;
   margin-right: 0.5rem;
   transition: border-radius 0.3s ease, transform 0.3s ease;
-}
-.runners-page table td.runner a:hover span.name {
-  color: #8cb5f9;
-}
-.runners-page table td.runner a:hover img.avatar {
-  border-radius: 0px;
-  transform: rotate(720deg);
 }
 .RunnerPage .runner-side,
 .RunnerPage .runner-main {
