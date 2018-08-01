@@ -331,7 +331,8 @@ section.activities .item.activity .info .date {
 .activity-page .activity-schedule table td.video .realtime {
   opacity: 0.6;
 }
-.activity-page .activity-schedule.entry-form table td {
+.activity-page .activity-schedule.entry-form table td,
+.activity-page .activity-schedule.invited-guest table td {
   height: auto;
 }
 .activity-page .discuss {
@@ -560,7 +561,7 @@ section.games .item.game .info .name {
 .index-blogs .blog .title .d {
   font-size: 16px;
   opacity: 0.6;
-  margin-left: 36px;
+  margin-left: 40px;
   font-family: "Orbitron", sans-serif;
 }
 .index-blogs .blog .bbox {
