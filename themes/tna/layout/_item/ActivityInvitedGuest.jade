@@ -1,20 +1,14 @@
-.doing(style='text-align:center;margin-bottom:2rem;')= activity.runners_blank
-
-.last-update(style='text-align:center;margin-bottom:2rem;')
-  span 最后更新时间：
-  span= last_update
-
-.activity-schedule.entry-form
+.activity-schedule.invited-guest
   .table-responsive
     table.table.table-dark.table-striped
       thead
         tr
-          th 报名人
+          th 邀请 Runner
           th 游戏
           th 规则
           th 预计时间
       tbody
-        - applying.forEach(x => {
+        - invited_guest.forEach(x => {
           tr
             td
               = x._runner

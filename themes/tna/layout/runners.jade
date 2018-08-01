@@ -1,11 +1,27 @@
 -
   runners = site.posts
     .filter(x => x.class === 'Runner')
+    .filter(x => x.show !== false)
   runners.data = runners.data
     .sort((a, b) => b.updated - a.updated)
 
 
 != partial('_layout/header')
+
+- function tdrunner(x)
+  td.runner
+    .tdi
+      .rr
+        img.avatar(src=x.avatar_url)
+        span.name(href=url_for(x.path))= x.name
+
+- function tdweibo(x)
+  td.weibo
+    .tdi
+      - if (x.weibo)
+        - wurl = x.weibo
+        - wtext = x.weibo.replace('https://', '')
+        a.link(href=wurl, target='_blank')= wtext
 
 .container
   .runners-page
@@ -23,18 +39,10 @@
           tbody
             - runners.forEach((x) => {
                 tr
-                  td.runner
-                    .tdi
-                      img.avatar(src=x.avatar_url)
-                      span.name= x.name
+                  = tdrunner(x)
                   td.liveroom
                     .tdi!= partial('_utils/liveroom-link', { url: x.liveroom_url })
-                  td
-                    .tdi
-                      - if (x.weibo)
-                        - wurl = x.weibo
-                        - wtext = x.weibo.replace('https://', '')
-                        a.link(href=wurl, target='_blank')= wtext
+                  = tdweibo(x)
                   td
                     .tdi!= partial('_utils/tags', { tags: x.tags })
                   td

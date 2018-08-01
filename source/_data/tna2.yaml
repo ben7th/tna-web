@@ -1,3 +1,4 @@
+applying_last_update: 2018-08-02 02:30
 applying:
   - _runner: Code
     _game: I wanna be the overlord
@@ -12,6 +13,10 @@ applying:
 
   - _runner: Rua
     _game: 空洞骑士
+
+  - _runner: ttt
+    _game: 空洞骑士
+    _rule: 106%
 
   - _runner: Vipeazone
     _game: X战警前传金刚狼
@@ -51,9 +56,8 @@ applying:
     _game: 银河战士AM2R
 
   - _runner: 篮球
-    _game: 
-      - 血源诅咒
-      - 黑暗之魂1RM
+    _game: 血源诅咒
+    _est: 01:30′
 
   - _runner: 楼座
     _game: 尼尔·自动人形
@@ -81,12 +85,25 @@ applying:
   - _runner: oO水晶梦幻Oo
     _game: 银河战士融合
     _rule: 100%
+    _est: 01:50′
 
   - _runner: 鲜血染红的樱花树
-    _game: 空洞骑士
+    _game: 
+      - 空洞骑士
+      - 人类：一败涂地
 
   - _runner: 鸦karas
     _game: 战神 2018
 
   - _runner: 依诺祈
-    _game: 空洞骑士
+    _game: 
+      - 空洞骑士
+      - 人类：一败涂地
+
+invited_guest:
+  - _runner: Qttsix
+    _game: 待定
+  - _runner: TGH
+    _game: 蔚蓝
+    _rule: 全草莓收集
+    _est: 01:05′

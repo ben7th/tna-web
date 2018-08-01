@@ -1,0 +1,21 @@
+.liveroom-link
+  span.site
+    display flex
+    align-items center
+  span.site
+    &::before
+      content ''
+      width 32px
+      height 32px
+      background-size cover
+      background-repeat no-repeat
+      background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/huya.png')
+      margin-right 0.5rem
+    &.huya::before
+      background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/huya.png')
+    &.douyu::before
+      background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/douyu.png')
+    &.bilibili::before
+      background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/bilibili.png')
+    &.twitch::before
+      background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/twitch.png')

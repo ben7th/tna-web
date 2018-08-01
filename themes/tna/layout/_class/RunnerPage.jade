@@ -1,0 +1,35 @@
+- function weibo(x)
+  .weibo
+    - if (x.weibo)
+      - wurl = x.weibo
+      - wtext = x.weibo.replace('https://', '')
+      a.link(href=wurl, target='_blank')= wtext
+
+.container
+  .row.RunnerPage
+    .side.col-md-4
+      .runner-side
+        .bbox
+          .ritem
+            != partial('_item/RunnerItem', { item: runner })
+          .rdetail
+            if runner.liveroom_url
+              .rd
+                h5 直播间
+                != partial('_utils/liveroom-link', { url: runner.liveroom_url })
+            if runner.weibo
+              .rd
+                h5 微博
+                != weibo(runner)
+            if runner.tags.length
+              .rd
+                h5 标签
+                != partial('_utils/tags', { tags: runner.tags })
+
+    .main.col-md-8
+      .runner-main
+        .bbox 
+          .rhead
+            .t Speedrun 纪录
+          .rbody
+            .a 11111222

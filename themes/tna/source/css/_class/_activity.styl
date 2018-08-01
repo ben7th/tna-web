@@ -152,19 +152,28 @@ section.activities
     display flex
     flex-wrap wrap
     justify-content center
-    
-    // .item.runner
-    //   &:nth-child(2n+1)
-    //     background-color rgba(mix(#e62e8b, white, 80%), 0.1)
-    //   &:nth-child(2n)
-    //     background-color rgba(mix(#24b3d1, white, 80%), 0.1)
   
   .activity-schedule
     borderBox()
     
-    table
+    table          
       td
         height $imgw
+        white-space nowrap
+      tr.day
+        td
+          height 24px
+          background-color rgba(#6fa2f7, 0.6)
+          .tdi
+            min-height 24px
+            justify-content center
+            font-family $fontTitle
+            text-shadow 0 0 10px black
+            span
+              position relative
+              top 3px
+            span.idx
+              margin-right 0.5rem
       td.applying
         line-height $imgw
         text-align center
@@ -199,7 +208,7 @@ section.activities
             margin-right 3px
         .realtime
           opacity 0.6
-    &.entry-form
+    &.entry-form, &.invited-guest
       table
         td
           height auto

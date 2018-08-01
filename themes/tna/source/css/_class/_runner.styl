@@ -45,33 +45,69 @@ $cw = 60px
   $avatarw = 32px
   table
     td .tdi
-      display flex
-      align-items center
       min-height $avatarw
     td.runner
-      img.avatar
-        width $avatarw
-        height $avatarw
-        border-radius 100px
-        margin-right 0.5rem
-    td.liveroom
-      span.site
+      overflow hidden
+      .rr
         display flex
         align-items center
-      span.site
-        &::before
-          content ''
-          width 32px
-          height 32px
-          background-size cover
-          background-repeat no-repeat
-          background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/huya.png')
+        span.name
+          // color $linkColor
+          // border-bottom dashed 1px $linkColor
+        img.avatar
+          width $avatarw
+          height $avatarw
+          border-radius 100px
           margin-right 0.5rem
-        &.huya::before
-          background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/huya.png')
-        &.douyu::before
-          background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/douyu.png')
-        &.bilibili::before
-          background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/bilibili.png')
-        &.twitch::before
-          background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/twitch.png')
+          transition border-radius .3s ease, transform .3s ease
+        // &:hover
+        //   span.name
+        //     color lighten($linkColor, 20%)
+        //   img.avatar
+        //     border-radius 0px
+        //     transform rotate(720deg)          
+
+.RunnerPage
+  .runner-side, .runner-main
+    height 100%
+    borderBox()
+    .bbox
+      height 100%
+  
+  .runner-side
+    .bbox
+      background-color rgba(white, 0.1)
+    .ritem
+      padding 1rem
+      display flex
+      justify-content center
+      border-bottom dashed 1px rgba($mainColor1, 0.5)
+      .item
+        // cursor default
+        background-color transparent
+        margin 0
+    .rdetail
+      padding 1rem
+      .rd
+        margin-bottom 1rem
+        &:last-child
+          margin-bottom 0
+        .tag
+          font-size 14px
+          padding 3px 12px
+          
+  .runner-main
+    .bbox
+      background-color transparent
+      display flex
+      flex-direction column
+      .rhead
+        background-color rgba(black, 0.2)
+        border-bottom dashed 1px rgba($mainColor1, 0.5)
+        padding 0.5rem 1rem
+        .t
+          font-size 24px
+      .rbody
+        padding 1rem
+        background-color rgba(black, 0.3)
+        flex 1

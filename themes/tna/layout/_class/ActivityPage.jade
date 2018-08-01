@@ -48,12 +48,20 @@
         != partial('_item/ActivityRunners', { activity })
 
       - d = site.data[activity.id]
-      - if (d && d.applying)
+      if (d && d.applying)
         section.entry-form#entry-form
           h3.tfont 
             .cn 报名情况
             .en Entry List
-          != partial('_item/ActivityEntryForm', { applying: d.applying })
+          != partial('_item/ActivityEntryForm', { applying: d.applying, last_update: d.applying_last_update })
+
+      if (d && d.invited_guest)
+        section.invited-guest
+          h3.tfont
+            .cn 受邀嘉宾
+            .en Iniited Guest
+          != partial('_item/ActivityInvitedGuest', { invited_guest: d.invited_guest })
+
 
       section.schedule
         h3.tfont 

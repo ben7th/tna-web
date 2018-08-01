@@ -9,6 +9,8 @@
 @import "_index-header"
 @import "_content"
 
+@import "_utils/liveroom-link"
+
 
 h1, h2, h3, h4, h5, h6
   font-weight 300
@@ -38,14 +40,18 @@ table.table
   font-size 14px
   th, td
     border 0 none
-  td
-    box-sizing content-box
-    padding 6px
-    line-height 21px
   th
     padding 6px
     color $goldenColor
     white-space nowrap
+  td
+    box-sizing content-box
+    padding 6px
+    line-height 21px
+  td .tdi
+    display flex
+    align-items center
+    min-height 32px
 
 span.tag
   font-size 12px
@@ -53,6 +59,7 @@ span.tag
   padding 0 10px
   border-radius 100px
   white-space nowrap
+  color white
 
 body.site
   display flex

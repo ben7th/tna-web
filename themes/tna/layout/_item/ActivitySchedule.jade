@@ -10,8 +10,52 @@
       .first()
   })
 
+  // 按日期排序
   shows.data = shows.data
     .sort((a, b) => Date.parse(a.start_at) - Date.parse(b.start_at))
+
+  // 按日期分组
+  days = {}
+  shows.forEach(s => {
+    let day = moment(s.start_at).format('YYYY-MM-DD')
+    days[day] = days[day] || []
+    days[day].push(s)
+  })
+
+- function tdname(show)
+  td.name
+    if (show.game)
+      .infobox
+        img(src=show.game.cover_url)
+        .info
+          .name= show.game.cn_name
+          .oname= show.game.name
+    else
+      .infobox
+        .info
+          .name= show.name
+          .oname= show.subname
+
+- function tdstart(show)
+  td.start
+    if (show.time_to)
+      .time= show.time_to
+    else
+      .time= moment(show.start_at).format('HH:mm:ss')
+
+- function tdrule(show)
+  td.rule
+    .r= show._rule ? `${show._rule} - ${show.platform}` : ''
+    .sub= show._subrule
+
+- function tdvideo(show)
+  td.video
+    - if (show.bilibili)
+      .link 
+        a.bilibili(href=('https://www.bilibili.com/video/' + show.bilibili), target='_blank')
+          i.fa.fa-video-camera
+          span= show.bilibili
+      .realtime= show.real_time
 
 .activity-schedule
   .table-responsive
@@ -30,36 +74,22 @@
             td.applying(colspan=6) 
               i.fa.fa-calendar
               span 正在筹备
-        - shows.forEach(show => {
-          tr
-            td.name
-              - if (show.game)
-                .infobox
-                  img(src=show.game.cover_url)
-                  .info
-                    .name= show.game.cn_name
-                    .oname= show.game.name
-              - else
-                .infobox
-                  .info
-                    .name= show.name
-                    .oname= show.subname
-            td.start
-              - if (show.time_to)
-                .time= show.time_to
-              - else
-                .time= time(show.start_at)
-                .date= date(show.start_at)
-            td= show._runner
-            td= show.estimated_time
-            td.rule
-              .r= show._rule ? `${show._rule} - ${show.platform}` : ''
-              .sub= show._subrule
-            td.video
-              - if (show.bilibili)
-                .link 
-                  a.bilibili(href=('https://www.bilibili.com/video/' + show.bilibili), target='_blank')
-                    i.fa.fa-video-camera
-                    span= show.bilibili
-                .realtime= show.real_time
-        - })
+        - else
+          - let idx = 0
+          - for (let day in days)
+            - idx ++
+            - shows = days[day]
+            tr.day
+              td(colspan=6)
+                .tdi
+                  span.idx= `DAY ${idx} :`
+                  span= day
+            - shows.forEach(show => {
+              tr
+                = tdname(show)
+                = tdstart(show)
+                td= show._runner
+                td= show.estimated_time
+                = tdrule(show)
+                = tdvideo(show)
+            - })
