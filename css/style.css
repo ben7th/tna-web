@@ -266,6 +266,24 @@ section.activities .item.activity .info .date {
 }
 .activity-page .activity-schedule table td {
   height: 42px;
+  white-space: nowrap;
+}
+.activity-page .activity-schedule table tr.day td {
+  height: 24px;
+  background-color: rgba(111,162,247,0.6);
+}
+.activity-page .activity-schedule table tr.day td .tdi {
+  min-height: 24px;
+  justify-content: center;
+  font-family: "Orbitron", sans-serif;
+  text-shadow: 0 0 10px #000;
+}
+.activity-page .activity-schedule table tr.day td .tdi span {
+  position: relative;
+  top: 3px;
+}
+.activity-page .activity-schedule table tr.day td .tdi span.idx {
+  margin-right: 0.5rem;
 }
 .activity-page .activity-schedule table td.applying {
   line-height: 42px;
@@ -382,40 +400,96 @@ section.activities .item.activity .info .date {
   background-color: rgba(0,0,0,0.3);
 }
 .runners-page table td .tdi {
-  display: flex;
-  align-items: center;
   min-height: 32px;
 }
-.runners-page table td.runner img.avatar {
+.runners-page table td.runner {
+  overflow: hidden;
+}
+.runners-page table td.runner a {
+  display: flex;
+  align-items: center;
+}
+.runners-page table td.runner a span.name {
+  color: #6fa2f7;
+  border-bottom: dashed 1px #6fa2f7;
+}
+.runners-page table td.runner a img.avatar {
   width: 32px;
   height: 32px;
   border-radius: 100px;
   margin-right: 0.5rem;
+  transition: border-radius 0.3s ease, transform 0.3s ease;
 }
-.runners-page table td.liveroom span.site {
+.runners-page table td.runner a:hover span.name {
+  color: #8cb5f9;
+}
+.runners-page table td.runner a:hover img.avatar {
+  border-radius: 0px;
+  transform: rotate(720deg);
+}
+.RunnerPage .runner-side,
+.RunnerPage .runner-main {
+  height: 100%;
+  border: solid 1px rgba(255,255,255,0.4);
+  padding: 3px;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+}
+.RunnerPage .runner-side .bbox,
+.RunnerPage .runner-main .bbox {
+  background-color: rgba(0,0,0,0.3);
+}
+.RunnerPage .runner-side .post-content-markdown,
+.RunnerPage .runner-main .post-content-markdown {
+  padding: 1rem;
+  background-color: rgba(0,0,0,0.3);
+}
+.RunnerPage .runner-side .bbox,
+.RunnerPage .runner-main .bbox {
+  height: 100%;
+}
+.RunnerPage .runner-side .bbox {
+  background-color: rgba(255,255,255,0.1);
+}
+.RunnerPage .runner-side .ritem {
+  padding: 1rem;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  border-bottom: dashed 1px rgba(215,236,255,0.5);
 }
-.runners-page table td.liveroom span.site::before {
-  content: '';
-  width: 32px;
-  height: 32px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/huya.png");
-  margin-right: 0.5rem;
+.RunnerPage .runner-side .ritem .item {
+  background-color: transparent;
+  margin: 0;
 }
-.runners-page table td.liveroom span.site.huya::before {
-  background-image: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/huya.png");
+.RunnerPage .runner-side .rdetail {
+  padding: 1rem;
 }
-.runners-page table td.liveroom span.site.douyu::before {
-  background-image: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/douyu.png");
+.RunnerPage .runner-side .rdetail .rd {
+  margin-bottom: 1rem;
 }
-.runners-page table td.liveroom span.site.bilibili::before {
-  background-image: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/bilibili.png");
+.RunnerPage .runner-side .rdetail .rd:last-child {
+  margin-bottom: 0;
 }
-.runners-page table td.liveroom span.site.twitch::before {
-  background-image: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/twitch.png");
+.RunnerPage .runner-side .rdetail .rd .tag {
+  font-size: 14px;
+  padding: 3px 12px;
+}
+.RunnerPage .runner-main .bbox {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+.RunnerPage .runner-main .bbox .rhead {
+  background-color: rgba(0,0,0,0.2);
+  border-bottom: dashed 1px rgba(215,236,255,0.5);
+  padding: 0.5rem 1rem;
+}
+.RunnerPage .runner-main .bbox .rhead .t {
+  font-size: 24px;
+}
+.RunnerPage .runner-main .bbox .rbody {
+  padding: 1rem;
+  background-color: rgba(0,0,0,0.3);
+  flex: 1;
 }
 section.games {
   display: flex;
@@ -759,6 +833,31 @@ body.site > .index-header .info .desc {
 .post-content-markdown a:hover {
   color: #8cb5f9;
 }
+.liveroom-link span.site {
+  display: flex;
+  align-items: center;
+}
+.liveroom-link span.site::before {
+  content: '';
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/huya.png");
+  margin-right: 0.5rem;
+}
+.liveroom-link span.site.huya::before {
+  background-image: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/huya.png");
+}
+.liveroom-link span.site.douyu::before {
+  background-image: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/douyu.png");
+}
+.liveroom-link span.site.bilibili::before {
+  background-image: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/bilibili.png");
+}
+.liveroom-link span.site.twitch::before {
+  background-image: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/twitch.png");
+}
 h1,
 h2,
 h3,
@@ -816,15 +915,20 @@ table.table th,
 table.table td {
   border: 0 none;
 }
+table.table th {
+  padding: 6px;
+  color: #ffcb50;
+  white-space: nowrap;
+}
 table.table td {
   box-sizing: content-box;
   padding: 6px;
   line-height: 21px;
 }
-table.table th {
-  padding: 6px;
-  color: #ffcb50;
-  white-space: nowrap;
+table.table td .tdi {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
 }
 span.tag {
   font-size: 12px;
@@ -832,6 +936,7 @@ span.tag {
   padding: 0 10px;
   border-radius: 100px;
   white-space: nowrap;
+  color: #fff;
 }
 body.site {
   display: flex;
