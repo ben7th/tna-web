@@ -652,28 +652,39 @@ body.site > .index-header .info .desc {
   font-size: 24px;
   opacity: 0.6;
 }
+body.site > .container {
+  padding-bottom: 1rem;
+}
+body.site > .zelda-letters {
+  width: 100%;
+  height: 30px;
+  background-image: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/together-not-alone-zelda-s-d7ecff.png");
+  background-repeat: repeat-x;
+  opacity: 0.3;
+  margin-bottom: 3px;
+}
 @media (max-width: 47.9em) {
-  body.site > .index-header .image.i2 {
+  body.site > .zelda-letters .image.i2 {
     display: none;
   }
-  body.site > .index-header .image.i1 {
+  body.site > .zelda-letters .image.i1 {
     order: 1;
     margin-bottom: 2rem;
     margin-top: 2rem;
   }
-  body.site > .index-header .image.i1 img {
+  body.site > .zelda-letters .image.i1 img {
     height: 6rem !important;
   }
-  body.site > .index-header .info {
+  body.site > .zelda-letters .info {
     order: 0;
     text-align: center;
     margin-top: 2rem;
   }
-  body.site > .index-header .info .title {
+  body.site > .zelda-letters .info .title {
     font-size: 36px;
   }
-  body.site > .index-header .info .subtitle,
-  body.site > .index-header .info .desc {
+  body.site > .zelda-letters .info .subtitle,
+  body.site > .zelda-letters .info .desc {
     font-size: 18px;
   }
 }
