@@ -652,6 +652,31 @@ body.site > .index-header .info .desc {
   font-size: 24px;
   opacity: 0.6;
 }
+@media (max-width: 47.9em) {
+  body.site > .index-header .image.i2 {
+    display: none;
+  }
+  body.site > .index-header .image.i1 {
+    order: 1;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  body.site > .index-header .image.i1 img {
+    height: 6rem !important;
+  }
+  body.site > .index-header .info {
+    order: 0;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  body.site > .index-header .info .title {
+    font-size: 36px;
+  }
+  body.site > .index-header .info .subtitle,
+  body.site > .index-header .info .desc {
+    font-size: 18px;
+  }
+}
 body.site > .container {
   padding-bottom: 1rem;
 }
@@ -662,31 +687,6 @@ body.site > .zelda-letters {
   background-repeat: repeat-x;
   opacity: 0.3;
   margin-bottom: 3px;
-}
-@media (max-width: 47.9em) {
-  body.site > .zelda-letters .image.i2 {
-    display: none;
-  }
-  body.site > .zelda-letters .image.i1 {
-    order: 1;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-  }
-  body.site > .zelda-letters .image.i1 img {
-    height: 6rem !important;
-  }
-  body.site > .zelda-letters .info {
-    order: 0;
-    text-align: center;
-    margin-top: 2rem;
-  }
-  body.site > .zelda-letters .info .title {
-    font-size: 36px;
-  }
-  body.site > .zelda-letters .info .subtitle,
-  body.site > .zelda-letters .info .desc {
-    font-size: 18px;
-  }
 }
 @-moz-keyframes animUD {
   0% {
