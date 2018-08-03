@@ -142,6 +142,11 @@ a:active {
   margin-bottom: 0rem;
   text-shadow: 0 0 20px #01b0ff, 0 0 10px #fff;
 }
+@media (max-width: 47.9em) {
+  .activity-page section.base .title h1 {
+    font-size: 64px;
+  }
+}
 .activity-page section.base .title .name,
 .activity-page section.base .title .date {
   font-family: "Orbitron", sans-serif;
@@ -154,6 +159,14 @@ a:active {
   margin: 0 0.5rem;
   opacity: 0.5;
 }
+@media (max-width: 47.9em) {
+  .activity-page section.base .title .name span {
+    display: block;
+  }
+  .activity-page section.base .title .name span.gap {
+    display: none;
+  }
+}
 .activity-page section.base .title .state,
 .activity-page section.base .title .state.completed {
   display: flex;
@@ -163,16 +176,12 @@ a:active {
 .activity-page section.base .title .state .st,
 .activity-page section.base .title .state.completed .st {
   padding: 1rem 0 0.5rem;
-  border-top: solid 3px #d7ecff;
-  border-bottom: solid 3px #d7ecff;
   font-family: "Orbitron", sans-serif;
   font-size: 30px;
   line-height: 30px;
   opacity: 0.5;
 }
 .activity-page section.base .title .state.incoming .st {
-  border-top: solid 3px rgba(255,203,80,0.8);
-  border-bottom: solid 3px rgba(255,203,80,0.8);
   color: #ffcb50;
   opacity: 1;
   text-shadow: 0 0 20px #ffcb50;
@@ -216,6 +225,11 @@ a:active {
 .activity-page section.intro .introc .post-content-markdown {
   padding: 1rem;
   background-color: rgba(0,0,0,0.3);
+}
+@media (max-width: 33.9em) {
+  .activity-page section.intro .iiiii {
+    flex-direction: column;
+  }
 }
 .activity-page section.video .video-player {
   border: solid 1px rgba(255,255,255,0.4);
@@ -835,6 +849,11 @@ body.site > .zelda-letters {
 }
 .post-content-markdown a:hover {
   color: #8cb5f9;
+}
+@media (max-width: 33.9em) {
+  .post-content-markdown {
+    font-size: 14px;
+  }
 }
 .liveroom-link span.site {
   display: flex;
