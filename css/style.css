@@ -628,6 +628,9 @@ body.site > .index-header .image {
   justify-content: center;
   align-items: center;
 }
+body.site > .index-header .image.i1 {
+  margin-top: 0.5rem;
+}
 body.site > .index-header .info {
   flex-direction: column;
   display: flex;
@@ -660,7 +663,8 @@ body.site > .index-header .info .desc {
     margin-top: 2rem;
   }
   body.site > .index-header .image.i1 img {
-    height: 6rem !important;
+    height: 8rem !important;
+    margin-top: 0 !important;
   }
   body.site > .index-header .info {
     order: 0;
