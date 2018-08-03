@@ -97,11 +97,11 @@ a:active {
   font-size: 16px;
   font-family: "Orbitron", sans-serif;
 }
-.index-activities .item.activity .code span.state.incoming {
+.index-activities .item.activity .code span.state.INCOMING {
   border-color: #ffcb50;
   color: #ffcb50;
 }
-.index-activities .item.activity .code span.state.completed {
+.index-activities .item.activity .code span.state.COMPLETED {
   border-color: #d7ecff;
   opacity: 0.5;
 }
@@ -168,20 +168,20 @@ a:active {
   }
 }
 .activity-page section.base .title .state,
-.activity-page section.base .title .state.completed {
+.activity-page section.base .title .state.COMPLETED {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
 }
 .activity-page section.base .title .state .st,
-.activity-page section.base .title .state.completed .st {
+.activity-page section.base .title .state.COMPLETED .st {
   padding: 1rem 0 0.5rem;
   font-family: "Orbitron", sans-serif;
   font-size: 30px;
   line-height: 30px;
   opacity: 0.5;
 }
-.activity-page section.base .title .state.incoming .st {
+.activity-page section.base .title .state.INCOMING .st {
   color: #ffcb50;
   opacity: 1;
   text-shadow: 0 0 20px #ffcb50;
