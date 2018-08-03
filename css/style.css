@@ -640,13 +640,15 @@ body.site > .index-header .info .title {
   font-family: "Orbitron", sans-serif;
 }
 body.site > .index-header .info .subtitle {
+  text-shadow: 0 0 20px #01b0ff, 0 0 10px #fff;
   font-size: 24px;
   font-family: "Orbitron", sans-serif;
-  opacity: 0.6;
+  margin-left: 0.1rem;
 }
 body.site > .index-header .info .desc {
+  text-shadow: 0 0 20px #01b0ff, 0 0 10px #fff;
   font-size: 24px;
-  opacity: 0.6;
+  margin-left: 0.1rem;
 }
 @media (max-width: 47.9em) {
   body.site > .index-header .image.i2 {
