@@ -604,9 +604,9 @@ body.site > .header .bbox.center a.hl.site-title::before {
 }
 body.site > .header .bbox.center a.hl.runners::before {
   content: '';
-  width: 24px;
-  height: 24px;
-  background-image: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/celeste-jump-point.png");
+  width: 32px;
+  height: 32px;
+  background-image: url("http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/rockman-pixel-64-64-4.png");
   background-size: cover;
   margin-right: 0.5rem;
 }
