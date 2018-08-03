@@ -1,19 +1,5 @@
--
-  activities = site.posts.filter(x => x.class == 'Activity')
-  activities.data = activities.data
-    .sort((a, b) => Date.parse(b.start_time) - Date.parse(a.start_time))
-
-  games = site.posts
-    .filter(x => x.class === 'Game')
-    .filter(x => x.display !== 'none')
-
-  runners = site.posts
-    .filter(x => x.class == 'Runner')
-  runners.data = runners.data.sort((a, b) => a.name > b.name ? 1 : -1)
-
-  blogs = site.posts.filter(x => x.class === 'Blog')
-  blogs.data = blogs.data
-    .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
+- activities = Model(site).all('Activity')
+- blogs = Model(site).all('Blog')
 
 != partial('_layout/header')
 != partial('_layout/index-header-mario')
@@ -25,33 +11,11 @@
         h3
           span 活动 
           span.sub Activities
-        - activities.forEach((item, index) => {
-          != partial('_item/ActivityItem', { item })
-        - })
+        != partial('_index/IndexActivities', { activities })
         
     .col-md-8
       section.recently
         h3
           span 最近动态 
           span.sub Recently
-        != partial('_item/IndexBlogs', { blogs })
-
-
-
-      // section.games
-      //   h3 
-      //     i.fa.fa-gamepad
-      //     span 游戏 Games
-      //   section.games
-      //     - games.forEach((item, index) => {
-      //       != partial('_item/GameItem', { item })
-      //     - })
-
-      // h3 
-      //   i.fa.fa-user-circle-o
-      //   span 玩家 Runners
-      // section.runners
-      //   - runners.forEach((item, index) => {
-      //     != partial('_item/RunnerItem', { item })
-      //   - })
-
+        != partial('_index/IndexBlogs', { blogs })

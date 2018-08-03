@@ -1,25 +1,30 @@
-applying_last_update: 2018-08-02 02:30
+applying_last_update: 2018-08-04 03:15
 applying:
   - _runner: Code
-    _game: I wanna be the overlord
+    _game: I Wanna Be The Overlord
 
   - _runner: DJ
     _game: 蔚蓝
 
   - _runner: gameNmagic
     _game: 
-      - 塞尔达传说·荒野之息
+      - 塞尔达传说：荒野之息
       - 超级马里奥·奥德赛
 
   - _runner: Rua
     _game: 空洞骑士
 
+  - _runner: SORP
+    _game: 血污：月之诅咒
+    _rule: Zangetsu Only
+    _rule_sub: Ultimate, Veteran
+    _est: 00:28′
+
   - _runner: ttt
     _game: 空洞骑士
-    _rule: 106%
 
   - _runner: Vipeazone
-    _game: X战警前传金刚狼
+    _game: X战警前传：金刚狼
 
   - _runner: yinger
     _game: 忍者猫
@@ -41,7 +46,7 @@ applying:
     _rule: 106%
 
   - _runner: 哆啦二猪
-    _game: 塞尔达传说·荒野之息
+    _game: 塞尔达传说：荒野之息
     _rule: Any%
 
   - _runner: 港湾丶微米
@@ -57,16 +62,18 @@ applying:
 
   - _runner: 篮球
     _game: 血源诅咒
+    _rule: All Bosses
     _est: 01:30′
 
   - _runner: 楼座
-    _game: 尼尔·自动人形
+    _game: 尼尔：机械纪元
     _rule: Any% A Ending
     _est: 01:40′
 
   - _runner: 猫德
     _game: 猎天使魔女
-    _rule: Any% Normal Newgame
+    _rule: New Game Any% Normal
+    _rule_sub: No Infinite Flute Glitch
     _est: 02:05′
 
   - _runner: 美美
@@ -75,7 +82,7 @@ applying:
     _est: 00:55′
 
   - _runner: 帕秋莉
-    _game: Duet
+    _game: 二重奏
 
   - _runner: 三鼬
     _game: 
@@ -83,7 +90,7 @@ applying:
       - 仁王
 
   - _runner: oO水晶梦幻Oo
-    _game: 银河战士融合
+    _game: 银河战士：融合
     _rule: 100%
     _est: 01:50′
 

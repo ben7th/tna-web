@@ -1,0 +1,25 @@
+//- game or games
+-
+  let games = []
+  if (typeof(_game) === 'string') {
+    games = [Model(site).one('Game', (x) => x.cn_name === _game)]
+  } else {
+    games = _game.map((_g) => {
+      let g = Model(site).one('Game', (x) => x.cn_name === _g)
+      return g || _g
+    })
+  }
+
+
+td.td-game
+  .tdi
+    each game in games
+      if (typeof(game) === 'object')
+        .game.data
+          - isrc = `${game.cover_url}?x-oss-process=image/resize,h_128,w_128`
+          img(src=isrc)
+          .info
+            .name= game.cn_name
+            .oname= game.name
+      else
+        .game.nodata= game

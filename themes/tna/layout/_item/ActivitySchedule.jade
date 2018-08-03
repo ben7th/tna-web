@@ -22,16 +22,12 @@
     days[day].push(s)
   })
 
-- function tdname(show)
-  td.name
-    if (show.game)
-      .infobox
-        img(src=show.game.cover_url)
-        .info
-          .name= show.game.cn_name
-          .oname= show.game.name
-    else
-      .infobox
+- function tdgame(show)
+  if show._game
+    != partial('_table/td-game', { _game: show._game })
+  else
+    td.td-game
+      .tdi.break
         .info
           .name= show.name
           .oname= show.subname
@@ -41,7 +37,7 @@
     if (show.time_to)
       .time= show.time_to
     else
-      .time= moment(show.start_at).format('HH:mm:ss')
+      .time= moment(show.start_at).format('HH:mm')
 
 - function tdrule(show)
   td.rule
@@ -57,6 +53,12 @@
           span= show.bilibili
       .realtime= show.real_time
 
+- function 正在筹备(show)
+  tr
+    td.applying(colspan=6) 
+      i.fa.fa-calendar
+      span 正在筹备
+
 .activity-schedule
   .table-responsive
     table.table.table-dark.table-striped
@@ -69,12 +71,9 @@
           th 规则/平台
           th 视频回放
       tbody
-        - if (shows.length === 0)
-          tr
-            td.applying(colspan=6) 
-              i.fa.fa-calendar
-              span 正在筹备
-        - else
+        if (shows.length === 0)
+          = 正在筹备(show)
+        else
           - let idx = 0
           - for (let day in days)
             - idx ++
@@ -82,11 +81,12 @@
             tr.day
               td(colspan=6)
                 .tdi
+                  i.fa.fa-calendar
                   span.idx= `DAY ${idx} :`
                   span= day
             - shows.forEach(show => {
               tr
-                = tdname(show)
+                = tdgame(show)
                 = tdstart(show)
                 td= show._runner
                 td= show.estimated_time

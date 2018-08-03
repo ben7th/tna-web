@@ -8,12 +8,10 @@ state()
     border-color $mainColor1
     opacity 0.5
 
-section.activities
+.index-activities
   .item.activity
     display block
     margin-bottom 1rem
-    &:hover
-      background-color rgba(white, 0.1)
     .obox
       border solid 1px rgba(white, 0.4)
       padding 3px
@@ -21,6 +19,10 @@ section.activities
       border-left solid 6px rgba($mainColor1, 0.6)
       background-color rgba(white, 0.1)
       position relative
+
+    &:hover .ibox
+      background-color rgba(white, 0.2)
+
     .code
       padding 0.5rem 1rem
       margin-bottom 0.5rem
@@ -156,6 +158,7 @@ section.activities
   .activity-schedule
     borderBox()
     
+    $imgw = 42px
     table          
       td
         height $imgw
@@ -163,12 +166,16 @@ section.activities
       tr.day
         td
           height 24px
-          background-color rgba(#6fa2f7, 0.6)
+          background-color rgba($linkColor, 0.382)
+          // color orange
           .tdi
             min-height 24px
-            justify-content center
+            justify-content flex-start
             font-family $fontTitle
             text-shadow 0 0 10px black
+            padding-left 0.5rem
+            i
+              margin-right 0.5rem
             span
               position relative
               top 3px
@@ -181,19 +188,6 @@ section.activities
           margin-right 0.5rem
       th.game
         padding-left 12px
-      td.name
-        .infobox
-          display flex
-          align-items center
-          img
-            width $imgw
-            height $imgw
-            border-radius 6px
-          .info
-            margin-left 6px
-            .oname
-              opacity 0.6
-              font-size 14px
       td.start
         .date
           font-size 14px

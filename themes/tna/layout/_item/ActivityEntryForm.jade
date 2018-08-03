@@ -1,3 +1,9 @@
+- function tdgame(x)
+  if (!!!x._game)
+    td.blank
+  else
+    != partial('_table/td-game', { _game: x._game })
+
 .doing(style='text-align:center;margin-bottom:2rem;')= activity.runners_blank
 
 .last-update(style='text-align:center;margin-bottom:2rem;')
@@ -18,15 +24,11 @@
           tr
             td
               = x._runner
-            td
-              - if (typeof(x._game) === 'string')
-                .game= x._game
-              - else
-                - for (_g of x._game)
-                  .game= _g
-
-            td
-              = x._rule
+            = tdgame(x)
+            td.rule
+              .r= x._rule
+              if (x._rule_sub)
+                .rule.sub= x._rule_sub
             td
               = x._est
         - })

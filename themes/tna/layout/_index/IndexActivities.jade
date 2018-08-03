@@ -1,0 +1,13 @@
+//- 首页上的活动列表
+
+.index-activities
+  each item in activities.toArray()
+    a.item.activity(href=url_for(item.path))
+      .obox
+        .ibox
+          .code
+            span.c= item.code
+            span.state(class=item.state)= item.state
+          .info
+            .name= item.name
+            .date= date(item.start_time)

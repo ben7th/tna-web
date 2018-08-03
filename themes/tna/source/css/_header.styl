@@ -12,26 +12,46 @@ body.site
         display flex
         align-items center
         justify-content center
-        h5.site-title
-          margin-top 3px
-          margin-bottom 0
-          line-height 1
-          margin-right 1rem
-        a.link
+        
+        a.hl
           font-size 18px
-          color $mainColor1
-          border 0 none
-          height 100%
           display flex
           align-items center
+          border 0 none
+          height 100%
           padding 0 1rem
-          margin-top 3px
           &:hover
             background-color rgba(white, 0.1)
+            
+        a.hl.site-title
+          font-size 20px
+          font-family $fontTitle
+          span
+            position relative
+            top 20px * 0.15
           &::before
             content ''
-            width 30px
-            height 30px
-            background url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/celeste-jump-point.png') no-repeat
+            background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/terraria-campfire-46-32.gif')
+            background-size cover
+            // 46 x 32 2px/grid
+            width 46px * (1.5 / 2)
+            height 32px * (1.5 / 2)
+            margin-right 0.5rem
+            
+        a.hl.runners
+          // &::before
+          //   content ''
+          //   width 48px * (2 / 4)
+          //   height 48px * (2 / 4)
+          //   background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/celeste-jump-point.png')
+          //   // 48 x 48 4px/grid
+          //   background-size cover
+          //   margin-right 0.5rem
+          &::before
+            content ''
+            width 64px * (2 / 4)
+            height 64px * (2 / 4)
+            background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/rockman-pixel-64-64-4.png')
+            // 48 x 48 4px/grid
             background-size cover
             margin-right 0.5rem

@@ -52,6 +52,32 @@ table.table
     display flex
     align-items center
     min-height 32px
+    
+  $imgw = 42px
+  td.td-game
+    .tdi
+      display flex
+      flex-direction column
+      align-items flex-start
+      justify-content center
+      .game
+        margin-bottom 6px
+        &:last-child
+          margin-bottom 0
+      .game.nodata
+        padding-left $imgw + 6px
+      .game.data
+        display flex
+        align-items center
+        img
+          width $imgw
+          height $imgw
+          border-radius 6px
+        .info
+          margin-left 6px
+          .oname
+            opacity 0.6
+            font-size 14px
 
 span.tag
   font-size 12px
@@ -98,9 +124,10 @@ body.site
         align-items flex-end
         &::before
           content ''
-          width 36px
-          height 36px
+          width 72px * (2 / 4)
+          height 72px * (2 / 4)
           background url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/celeste-blue-heart.png') no-repeat
+          // 72 x 72 4px/pixel
           background-size cover
           margin-right 0.5rem
           position relative

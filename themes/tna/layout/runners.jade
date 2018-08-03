@@ -1,12 +1,4 @@
--
-  runners = site.posts
-    .filter(x => x.class === 'Runner')
-    .filter(x => x.show !== false)
-  runners.data = runners.data
-    .sort((a, b) => b.updated - a.updated)
-
-
-!= partial('_layout/header')
+- runners = Model(site).all('Runner')
 
 - function tdrunner(x)
   td.runner
@@ -18,10 +10,12 @@
 - function tdweibo(x)
   td.weibo
     .tdi
-      - if (x.weibo)
+      if (x.weibo)
         - wurl = x.weibo
         - wtext = x.weibo.replace('https://', '')
         a.link(href=wurl, target='_blank')= wtext
+
+!= partial('_layout/header')
 
 .container
   .runners-page
