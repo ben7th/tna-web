@@ -1,35 +1,64 @@
+- function liveroom(runner)
+    if runner.liveroom_url
+      .rd
+        h6 直播间
+        != partial('_utils/liveroom-link', { url: runner.liveroom_url })
+
 - function weibo(x)
-  .weibo
-    - if (x.weibo)
-      - wurl = x.weibo
-      - wtext = x.weibo.replace('https://', '')
-      a.link(href=wurl, target='_blank')= wtext
+    if x.weibo
+      .rd
+        h6 微博
+        != partial('_utils/weibo-link', { url: x.weibo })
+
+- function bilibili(x)
+    if x.bilibili
+      .rd
+        h6 Bilibili
+        != partial('_utils/bilibili-link', { url: x.bilibili })
+
+- function youtube(x)
+    if x.youtube
+      .rd
+        h6 Youtube
+        != partial('_utils/youtube-link', { url: x.youtube })
+
+- function twitter(x)
+    if x.twitter
+      .rd
+        h6 Twitter
+        != partial('_utils/twitter-link', { url: x.twitter })
+
+- function tags(x)
+    if runner.tags.length
+      .rd
+        h6 标签
+        != partial('_utils/tags', { tags: runner.tags })
 
 .container
   .row.RunnerPage
-    .side.col-md-4
+    .side.col-md-3
       .runner-side
         .bbox
-          .ritem
-            != partial('_item/RunnerItem', { item: runner })
-          .rdetail
-            if runner.liveroom_url
-              .rd
-                h5 直播间
-                != partial('_utils/liveroom-link', { url: runner.liveroom_url })
-            if runner.weibo
-              .rd
-                h5 微博
-                != weibo(runner)
-            if runner.tags.length
-              .rd
-                h5 标签
-                != partial('_utils/tags', { tags: runner.tags })
+          .ritem(style='border: 0 none !important;background: transparent;')
+            != partial('_item/RunnerPageItem', { item: runner })
 
-    .main.col-md-8
+    .main.col-md-9
       .runner-main
         .bbox 
           .rhead
-            .t Speedrun 纪录
+            .t= `${runner.name} 的档案`
           .rbody
-            .a 11111222
+            .rdetail
+              = liveroom(runner)
+              = weibo(runner)
+              = twitter(runner)
+              = bilibili(runner)
+              = youtube(runner)
+              = tags(runner)
+
+    // .main.col-md-9
+    //   .runner-main
+    //     .bbox 
+    //       .rhead
+    //         .t 速通纪录 & 视频
+    //       .rbody 正在收集整理…

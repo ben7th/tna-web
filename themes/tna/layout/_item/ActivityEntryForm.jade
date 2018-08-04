@@ -22,8 +22,7 @@
       tbody
         - applying.forEach(x => {
           tr
-            td
-              = x._runner
+            != partial('_table/td-runner', { _runner: x._runner })
             = tdgame(x)
             td.rule
               .r= x._rule

@@ -1,0 +1,6 @@
+if url
+  .site-link.weibo-link
+    - wtext = url.replace('https://', '')
+    span.site
+      .icon
+      a.link(href=url, target='_blank')= wtext

@@ -1,0 +1,8 @@
+.page-item.runner
+  .avatar
+    img(src=item.avatar_url)
+  .info
+    h5.name= item.name
+    h6.nickname= item.nickname
+    if item.desc
+      .desc= item.desc

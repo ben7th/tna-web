@@ -9,7 +9,7 @@
 @import "_index-header"
 @import "_content"
 
-@import "_utils/liveroom-link"
+@import "_utils/icon-links"
 
 
 h1, h2, h3, h4, h5, h6
@@ -32,6 +32,16 @@ a.link
   
 .titlefont
   font-family $fontTitle
+  
+.page-alert
+  borderBox()
+  margin-bottom 1rem
+  .alert-text
+    padding 1rem
+    background-color rgba(black, 0.1)
+    .p
+      font-size 14px
+      opacity 0.8
   
 table.table
   margin-bottom 0
@@ -78,6 +88,34 @@ table.table
           .oname
             opacity 0.6
             font-size 14px
+  
+  $avatarw = 32px     
+  td.td-runner
+    overflow hidden
+    vertical-align middle
+    .tdi
+      min-height $avatarw
+    .rr
+      display flex
+      align-items center
+      img.avatar
+        width $avatarw
+        height $avatarw
+        border-radius 100px
+        margin-right 0.5rem
+        transition border-radius .3s ease, transform .3s ease
+    a.rr
+      span.name
+        // $c = lighten($mainColor1, 20%)
+        $c = $mainColor1
+        color $c
+        border-bottom dashed 1px $c
+      &:hover
+        span.name
+          color lighten($linkColor, 20%)
+        img.avatar
+          border-radius 0px
+          transform rotate(720deg)   
 
 span.tag
   font-size 12px

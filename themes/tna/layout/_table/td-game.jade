@@ -2,7 +2,8 @@
 -
   let games = []
   if (typeof(_game) === 'string') {
-    games = [Model(site).one('Game', (x) => x.cn_name === _game)]
+    let g = Model(site).one('Game', (x) => x.cn_name === _game)
+    games = [ g || _game ]
   } else {
     games = _game.map((_g) => {
       let g = Model(site).one('Game', (x) => x.cn_name === _g)

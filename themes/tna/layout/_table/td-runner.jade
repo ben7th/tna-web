@@ -1,0 +1,21 @@
+-
+  let defaultAvatarURL = 'http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/utils/pixel-emoji-sunglasses.png'
+
+  let r
+  if (runner) {
+    r = runner
+  } else if (_runner) {
+    r = Model(site).one('Runner', (x) => x.name === _runner)
+  }
+
+
+td.td-runner
+  .tdi
+    if r
+      a.rr(href=url_for(r.path))
+        img.avatar(src=(r.avatar_url || defaultAvatarURL))
+        span.name= r.name
+    else if _runner
+      .rr
+        img.avatar(src=defaultAvatarURL)
+        span.name= _runner

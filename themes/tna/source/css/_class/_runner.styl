@@ -1,10 +1,6 @@
 $w = 150px 
 $cw = 60px
 
-// section.runners
-//   display flex
-//   flex-wrap wrap
-
 .item.runner
   display block
   width $w
@@ -37,35 +33,9 @@ $cw = 60px
 .runners-page
   margin-bottom 2rem
   h3
-    // text-align center
     margin-bottom 1rem
   .tbox
-    borderBox()
-  
-  $avatarw = 32px
-  table
-    td .tdi
-      min-height $avatarw
-    td.runner
-      overflow hidden
-      .rr
-        display flex
-        align-items center
-        span.name
-          // color $linkColor
-          // border-bottom dashed 1px $linkColor
-        img.avatar
-          width $avatarw
-          height $avatarw
-          border-radius 100px
-          margin-right 0.5rem
-          transition border-radius .3s ease, transform .3s ease
-        // &:hover
-        //   span.name
-        //     color lighten($linkColor, 20%)
-        //   img.avatar
-        //     border-radius 0px
-        //     transform rotate(720deg)          
+    borderBox()     
 
 .RunnerPage
   .runner-side, .runner-main
@@ -74,7 +44,12 @@ $cw = 60px
     .bbox
       height 100%
   
+  @media $sm
+    .runner-side, .runner-main
+      height auto
+  
   .runner-side
+    margin-bottom 1rem
     .bbox
       background-color rgba(white, 0.1)
     .ritem
@@ -82,19 +57,61 @@ $cw = 60px
       display flex
       justify-content center
       border-bottom dashed 1px rgba($mainColor1, 0.5)
-      .item
-        // cursor default
-        background-color transparent
-        margin 0
+      background-color rgba(black, 0.1)
+      .page-item
+        .avatar
+          margin-top 1rem
+          margin-bottom 1rem
+          display flex
+          align-items center
+          justify-content center
+          img
+            width 128px
+            height 128px
+            border-radius 100px
+        .info
+          .name
+            text-align center
+          .nickname
+            text-align center
+            opacity 0.6
+          .desc
+            margin-top 1rem
+            font-size 14px
+            opacity 0.6
+            margin-bottom 1rem
+            word-break break-all
+        
+  .runner-main // 临时样式
     .rdetail
-      padding 1rem
+      margin -1rem -1rem 0
       .rd
-        margin-bottom 1rem
+        padding 1rem
+        border-bottom dashed 1px rgba($mainColor1, 0.5)
         &:last-child
           margin-bottom 0
-        .tag
-          font-size 14px
-          padding 3px 12px
+          border-bottom 0 none
+        h6
+          font-size 20px
+        .tags
+          margin-top 1rem
+          .tag
+            font-size 14px
+            padding 3px 12px
+        
+        // .site-link
+        //   span.site
+        //     align-items flex-start
+        //     .icon::before
+        //       width 24px
+        //       height 24px
+        //     a.link
+        //       display flex
+        //       align-items center
+        //       min-height 24px
+        //       font-size 14px
+        //       word-break break-all
+        //       border 0 none
           
   .runner-main
     .bbox

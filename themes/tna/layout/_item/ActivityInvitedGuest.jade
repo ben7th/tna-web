@@ -10,15 +10,8 @@
       tbody
         - invited_guest.forEach(x => {
           tr
-            td
-              = x._runner
-            td
-              - if (typeof(x._game) === 'string')
-                .game= x._game
-              - else
-                - for (_g of x._game)
-                  .game= _g
-
+            != partial('_table/td-runner', { _runner: x._runner })
+            != partial('_table/td-game', { _game: x._game })
             td
               = x._rule
             td

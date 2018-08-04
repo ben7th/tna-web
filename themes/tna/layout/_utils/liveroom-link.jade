@@ -4,6 +4,8 @@
     text = url.replace('https://', '').replace('www.', '')
   }
 
-.liveroom-link
-  span.site(class=site)
-    a.link.site(href=url, target='_blank')= text
+if url
+  .site-link.liveroom-link
+    span.site(class=site)
+      .icon
+      a.link.site(href=url, target='_blank')= text

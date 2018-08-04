@@ -8,7 +8,7 @@ en_name: Together Not Alone 1st
 
 start_time: 2018-03-25 12:00
 end_time: 2018-03-25 23:30
-state: completed
+state: COMPLETED
 site: https://live.bilibili.com/
 liveroom_url: https://live.bilibili.com/38593
 

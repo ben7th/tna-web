@@ -2,7 +2,8 @@ const moment = require('moment')
 
 const defaultSorters = {
   Blog: (a, b) => { return b.date - a.date },
-  Runner: (a, b) => { return b.updated - a.updated },
+  // Runner: (a, b) => { return b.updated - a.updated },
+  Runner: (a, b) => { return a.name.localeCompare(b.name) },
   Activity: (a, b) => { return moment(b.start_time) - moment(a.start_time) }
 }
 

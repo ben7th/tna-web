@@ -1,25 +1,35 @@
 - runners = Model(site).all('Runner')
 
-- function tdrunner(x)
-  td.runner
-    .tdi
-      .rr
-        img.avatar(src=x.avatar_url)
-        span.name(href=url_for(x.path))= x.name
-
 - function tdweibo(x)
   td.weibo
     .tdi
       if (x.weibo)
         - wurl = x.weibo
-        - wtext = x.weibo.replace('https://', '')
+        - wtext = x.weibo.replace('https://weibo.com/', '')
         a.link(href=wurl, target='_blank')= wtext
+
+- function tdliveroom(x)
+  td.liveroom
+    .tdi!= partial('_utils/liveroom-link', { url: x.liveroom_url })
 
 != partial('_layout/header')
 
 .container
   .runners-page
-    h3.tfont Runners Data
+    h3.tfont Runners Profile
+    
+    .page-alert
+      .bbox
+        .alert-text
+          .p 
+            span 速通玩家档案 (Runners Profile) 主要包括参与过 TNA 线上活动的玩家们。
+            a.link(href=url_for('/Activity/tna2.html')) TNA2
+            span &nbsp;活动结束后，将陆续补充以中文圈为主的更多速通玩家资料。
+          .p
+            span 目前数据由&nbsp;
+            a.link(href='https://weibo.com/ben7th', target='_blank') @洋气书生
+            span &nbsp;整理维护；若有错误，疏漏，敬请谅解，可通过微博私信联系进行修改。
+
     .tbox
       .table-responsive
         table.table.table-dark.table-striped
@@ -33,12 +43,11 @@
           tbody
             - runners.forEach((x) => {
                 tr
-                  = tdrunner(x)
-                  td.liveroom
-                    .tdi!= partial('_utils/liveroom-link', { url: x.liveroom_url })
+                  != partial('_table/td-runner', { runner: x })
+                  = tdliveroom(x)
                   = tdweibo(x)
                   td
                     .tdi!= partial('_utils/tags', { tags: x.tags })
                   td
-                    .tdi= x.updated.format('YYYY-MM-DD HH:mm')
+                    .tdi= x.updated.locale('zh-cn').fromNow()
             - })

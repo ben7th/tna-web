@@ -1,0 +1,6 @@
+if url
+  .site-link.youtube-link
+    - wtext = url.replace('https://www.', '')
+    span.site
+      .icon
+      a.link(href=url, target='_blank')= wtext

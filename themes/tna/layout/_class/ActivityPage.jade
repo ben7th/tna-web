@@ -1,45 +1,54 @@
+!= css('css/stars.css')
+
+.activity-page-stars-bg
+  #stars
+  #stars1
+  #stars2
+
+  .container
+    .row
+      .col-md-10.offset-md-1
+        section.base      
+          .title
+            h1.tfont= activity.code
+            .name
+              span= activity.name
+              span.gap |
+              span= activity.en_name
+            .date
+              span= date(activity.start_time)
+              span= ` [${moment(activity.start_time).format('ddd')}.]`
+            if (activity.state)
+              .state(class=activity.state)
+                .st= activity.state
+            if (activity.logohtml)
+              .logohtml!= activity.logohtml
+          if (activity.cover_url)
+            .cover
+              .cc
+                img(src=activity.cover_url)
+
 .container
   .row.activity-page 
     .col-md-10.offset-md-1
-      section.base
-        .title
-          h1.tfont= activity.code
-          .name
-            span= activity.name
-            span.gap |
-            span= activity.en_name
-          .date
-            span= date(activity.start_time)
-            span= ` [${moment(activity.start_time).format('ddd')}.]`
-          if (activity.state)
-            .state(class=activity.state)
-              .st= activity.state
-          if (activity.logohtml)
-            .logohtml!= activity.logohtml
-        if (activity.cover_url)
-          .cover
-            .cc
-              img(src=activity.cover_url)
+      section.intro
+        h3.tfont 
+          .cn 活动简介 
+          .en Introduction
+        .freehtml
+          != activity.freehtml
+        if activity.content
+          .introc
+            != partial('_item/PostContent', { item: activity })
 
-      .col-md-10.offset-md-1
-        section.intro
-          h3.tfont 
-            .cn 活动简介 
-            .en Introduction
-          .freehtml
-            != activity.freehtml
-          if activity.content
-            .introc
-              != partial('_item/PostContent', { item: activity })
-
-      .col-md-10.offset-md-1
-        - for (vt of Object.keys(activity.videos))
-          section.video
-            - video = activity.videos[vt]
-            h3.tfont= vt
-            .video-player
-              .box
-                iframe(src=video.player, scrolling='no', border='0', frameborder='no', framespacing='0', allowfullscreen='true')
+    .col-md-10.offset-md-1
+      - for (vt of Object.keys(activity.videos))
+        section.video
+          - video = activity.videos[vt]
+          h3.tfont= vt
+          .video-player
+            .box
+              iframe(src=video.player, scrolling='no', border='0', frameborder='no', framespacing='0', allowfullscreen='true')
 
       section
         h3.tfont

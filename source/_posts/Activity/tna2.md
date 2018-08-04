@@ -8,7 +8,7 @@ en_name: Together Not Alone 2nd
 
 start_time: 2018-10-01
 end_time:
-state: incoming
+state: INCOMING
 address: 
 site: https://www.huya.com/
 liveroom_url: https://www.huya.com/15479446
@@ -32,7 +32,7 @@ logohtml: "
     }
   </style>
   <div class='tna2logo'>
-    <img src='http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/activities/tna2-d7ecff.png' />
+    <img src='http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/activities/tna2-d7ecff-light.png' />
   </div>
 "
 

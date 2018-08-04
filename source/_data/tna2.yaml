@@ -23,7 +23,7 @@ applying:
   - _runner: ttt
     _game: 空洞骑士
 
-  - _runner: Vipeazone
+  - _runner: vipeazone
     _game: X战警前传：金刚狼
 
   - _runner: yinger
@@ -99,7 +99,7 @@ applying:
       - 空洞骑士
       - 人类：一败涂地
 
-  - _runner: 鸦karas
+  - _runner: 鸦-karas
     _game: 战神 2018
 
   - _runner: 依诺祈

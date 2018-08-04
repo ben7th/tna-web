@@ -1,0 +1,42 @@
+$iconw = 32px
+
+.site-link
+  span.site
+    display flex
+    align-items center
+    .icon
+      margin-right 0.5rem
+      &::before
+        display block
+        content ''
+        width $iconw
+        height $iconw
+        background-size cover
+        background-repeat no-repeat
+
+  &.liveroom-link
+    span.site
+      &.huya .icon::before
+        background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/huya.png')
+      &.douyu .icon::before
+        background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/douyu.png')
+      &.bilibili .icon::before
+        background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/bilibili.png')
+      &.twitch .icon::before
+        background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/twitch.png')
+      
+  &.weibo-link
+    span.site .icon::before
+      background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/weibo.png')
+      
+  &.bilibili-link
+    span.site .icon::before
+      background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/bilibili.png')
+        
+  &.youtube-link
+    span.site .icon::before
+      background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/youtube.png')
+      
+  &.twitter-link
+    span.site .icon::before
+      background-image url('http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/sites/twitter.png')
