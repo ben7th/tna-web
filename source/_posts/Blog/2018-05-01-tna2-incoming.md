@@ -11,8 +11,8 @@ top: true
 TNA2 线上速通活动招募
 https://www.bilibili.com/read/cv462722
 
-项目报名情况（最后更新时间：2018-08-04 03:15）
-[TNA2 项目报名与邀请情况](/Activity/tna2.html#entry-form)
+**活动时间表**
+[TNA2 活动时间表](/Activity/tna2.html#schedule)
 
 报名 QQ 群: <span style='color: orange'>399815456</span>
 

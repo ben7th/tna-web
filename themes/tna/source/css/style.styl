@@ -63,6 +63,11 @@ table.table
     align-items center
     min-height 32px
     
+  td a.rr
+    $c = $mainColor1
+    color $c
+    border-bottom dashed 1px $c
+    
   $imgw = 42px
   td.td-game
     .tdi
@@ -95,6 +100,9 @@ table.table
     vertical-align middle
     .tdi
       min-height $avatarw
+      margin-bottom 0.5rem
+      &:last-child
+        margin-bottom 0
     .rr
       display flex
       align-items center

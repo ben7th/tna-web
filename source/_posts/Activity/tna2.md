@@ -6,8 +6,8 @@ name: 第二届线上速通大会
 en_name: Together Not Alone 2nd
 <!-- cover_url: http://img4ye.oss-cn-hangzhou.aliyuncs.com/tna/activities/tna1w.png -->
 
-start_time: 2018-10-01
-end_time:
+start_time: 2018-10-05
+end_time: 2018-10-07
 state: INCOMING
 address: 
 site: https://www.huya.com/
@@ -97,7 +97,7 @@ freehtml: "
       margin-bottom: 0.5rem;
     }
     .time .ttime {
-      font-size: 30px;
+      font-size: 24px;
       line-height: 30px;
     }
   </style>
@@ -121,8 +121,16 @@ freehtml: "
         <h4>活动时间</h4>
         <h5 class='tfont'>time</h5>
         <div class='ti'>
-          <div class='date titlefont'>2018 年 10 月 1 日</div>
-          <div class='ttime titlefont'>??:??</div>
+          <div class='date titlefont'>2018 年 10 月 5 日</div>
+          <div class='ttime titlefont'>12:00 - 23:05</div>
+        </div>
+        <div class='ti' style='margin-top: 1rem;'>
+          <div class='date titlefont'>2018 年 10 月 6 日</div>
+          <div class='ttime titlefont'>10:00 - 23:32</div>
+        </div>
+        <div class='ti' style='margin-top: 1rem;'>
+          <div class='date titlefont'>2018 年 10 月 7 日</div>
+          <div class='ttime titlefont'>12:00 - 22:40</div>
         </div>
       </div>
     </div>

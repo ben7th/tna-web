@@ -1,5 +1,5 @@
 applying_last_update: 2018-08-04 03:15
-applying:
+applying_:
   - _runner: Code
     _game: I Wanna Be The Overlord
 
@@ -107,7 +107,7 @@ applying:
       - 空洞骑士
       - 人类：一败涂地
 
-invited_guest:
+invited_guest_:
   - _runner: Qttsix
     _game: 待定
   - _runner: TGH

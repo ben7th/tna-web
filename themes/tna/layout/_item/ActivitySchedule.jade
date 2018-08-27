@@ -23,14 +23,18 @@
   })
 
 - function tdgame(show)
-  if show._game
-    != partial('_table/td-game', { _game: show._game })
-  else
-    td.td-game
+  td.td-game
+    if show._games
+      - for (let _g of show._games)
+        != partial('_table/td-game-schedule', { _game: _g })
+    else if show._game
+      != partial('_table/td-game-schedule', { _game: show._game })
+    else
       .tdi.break
         .info
           .name= show.name
           .oname= show.subname
+
 
 - function tdstart(show)
   td.start
@@ -58,6 +62,14 @@
     td.applying(colspan=6) 
       i.fa.fa-calendar
       span 正在筹备
+
+- function tdrunner(show)
+  td.runner
+    - if (show._runner)
+      != partial('_table/td-runner-schedule', { _runner: show._runner })
+    - if (show._runners)
+      - for (let _r of show._runners)
+        != partial('_table/td-runner-schedule', { _runner: _r })
 
 .activity-schedule
   .table-responsive
@@ -88,7 +100,7 @@
               tr
                 = tdgame(show)
                 = tdstart(show)
-                td= show._runner
+                = tdrunner(show)
                 td= show.estimated_time
                 = tdrule(show)
                 = tdvideo(show)

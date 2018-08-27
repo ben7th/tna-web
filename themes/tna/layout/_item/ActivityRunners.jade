@@ -2,24 +2,32 @@
   shows = site.posts
     .filter(x => x.class === 'Show')
     .filter(x => x._activity === activity.id)
-    .filter(x => !!x._runner)
-
-  shows.forEach(s => {
-    s.runner = site.posts
-      .filter(x => x.class === 'Runner')
-      .filter(x => x.name === s._runner)
-      .first()
-  })
+    .filter(x => !!x._runner || !!x._runners)
 
   shows.data = shows.data.sort((a, b) => Date.parse(a.start_at) - Date.parse(b.start_at))
 
   runnerShows = {}
-  shows.forEach (s => {
-    runnerShows[s._runner] = runnerShows[s._runner] || {
-      runner: s.runner,
+  ppp = sr => {
+    let runner = Model(site).one('Runner', (x) => x.name === sr)
+
+    runnerShows[sr] = runnerShows[sr] || {
+      runner: runner,
       shows: []
     }
-    runnerShows[s._runner].shows.push(s)
+    runnerShows[sr].shows.push(s)
+  }
+
+
+  shows.forEach (s => {
+    if (s._runner) {
+      ppp(s._runner)
+    }
+
+    if (s._runners) {
+      for (let _sr of s._runners) {
+        ppp(_sr)
+      }
+    }
   })
 
 .activity-runners
@@ -27,6 +35,7 @@
     - Object.keys(runnerShows).forEach(x => {
       - o = runnerShows[x]
       - runner = o.runner
+      - if (runner)
         != partial('_item/RunnerItem', { item: runner })
     - })
   - else
