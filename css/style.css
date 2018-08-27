@@ -1016,6 +1016,10 @@ table.table td .tdi {
   align-items: center;
   min-height: 32px;
 }
+table.table td a.rr {
+  color: #d7ecff;
+  border-bottom: dashed 1px #d7ecff;
+}
 table.table td.td-game .tdi {
   display: flex;
   flex-direction: column;
@@ -1053,6 +1057,10 @@ table.table td.td-runner {
 }
 table.table td.td-runner .tdi {
   min-height: 32px;
+  margin-bottom: 0.5rem;
+}
+table.table td.td-runner .tdi:last-child {
+  margin-bottom: 0;
 }
 table.table td.td-runner .rr {
   display: flex;
